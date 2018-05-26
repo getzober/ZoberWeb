@@ -1,0 +1,63 @@
+
+<section>
+  <%=render 'layouts/header' %>
+</section>
+
+
+    <div class="container-fluid users"><br>
+      <div class="p-3 text-center">
+        <h1 class="display-4">My Profile</h1><hr>
+        <p></p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <h4 class="card-header "><%="#{current_user.username}"%><br>
+              <div class="small">
+                <a class="btn btn-raised " href="#" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-raised " href="#">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn-raised " href="#">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+              </div>
+            </h4>
+            <div class="card-body">
+
+              <h4 class="card-title user">About <%= current_user.username %></h4>
+              <small class="small-user">joined: <%= current_user.created_at %></small>
+
+              <p class="user_email">email: <%= current_user.email %></p>
+              <p class="card-text user">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam facilis qui maiores quaerat perspiciatis? Non alias a iste similique ab nesciunt cum ad tempore. Architecto dolore est explicabo deleniti porro.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card text-white  mb-3" style="max-width: 20rem;">
+            <header><h1 class="display-4">Facilites I'm interested in</h1></header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>Inbox</h1>
+    <hr>
+
+    <section>
+      <div class="container-fluid">
+        <div class="card">
+          <%= react_component("Inbox") %> <%# get/pass all user inbox messages %>
+        </div>
+      </div>
+    </section>
+    <section>
+      <%=render 'layouts/footer_main' %>
+    </section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://unpkg.com/popper.js@1.12.5/dist/umd/popper.js"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.3/dist/js/bootstrap-material-design.js"></script>

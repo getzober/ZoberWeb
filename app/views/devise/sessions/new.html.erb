@@ -1,0 +1,26 @@
+<section>
+  <%= render 'layouts/header' %>
+</section>
+<div class="container-fluid login">
+  <div class="border-form-div-login">
+<h2 class="provider_login">log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+
+    <%= f.input :email, required: false, autofocus: true, class:'email' %>
+    <%= f.input :password, required: false, class:'password_input' %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in", class: "user_submit" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
+</div>
+<section>
+  <%= render 'layouts/footer_main' %>
+</section>

@@ -1,0 +1,96 @@
+<section>
+<%= render "layouts/header" %>
+</section>
+  <section>
+    <div class="container-fluid signup">
+    <h1 class="provider-title">register your facility</h1>
+  </div>
+    </section>
+    <% if current_provider %>
+    <section>
+      <div class="container-fluid">
+
+        <div class="col-sm-12 mx-auto why">
+
+          <p>Zober offers a number of different options and plans depending on your needs Please look at the different plans below and decide which one is best suited to your needs.
+          If you need help, please reach out to us at any time. Thanks! we look forward to helping you in this journey.</p>
+        </div>
+
+</div>
+    </section>
+    <% else %>
+    <section>
+      <div class="container-fluid">
+
+        <div class="col-sm-12 mx-auto why">
+
+          <p>zober is always free for non-profits. select either residential treatment center or sober living facility and get started to get your facilities listed today.
+          If you have any questions, please contact us via email at any time! Thanks so much!</p>
+        </div>
+
+</div>
+    </section>
+    <% end %>
+    <section id="content-details" class="row clearfix">
+  <div id="details-article" class="col-sm-12 products">
+      <!-- <div class="img-fluid mx-auto" id="wall_ring"> -->
+  <%=image_tag("wall_ring.jpg", alt: "logo", class: "img-fluid wall_ring")%>
+
+
+  <!-- </div> -->
+</div>
+</section>
+
+<section id="products">
+  <div class="container-fluid">
+  <div class="row flex-items-xs-middle flex-items-xs-center">
+<% @products.each do |product| %>
+
+    <div class="col-xs-12 col-lg-4">
+      <div class="card products text-xs-center">
+        <div class="card-header products">
+          <h3 class="display-2"><%=image_tag("wall_ring.jpg", alt: "logo", class: "img-fluid wall_ring")%></h3>
+        </div>
+        <div class="card-block products">
+          <h4 class="card-title products">
+          <%= product.title %>
+          </h4>
+          <ul class="list-group">
+            <li class="list-group-item products"><%= product.subtitle %></li>
+            <li class="list-group-item products">Responsive Ready</li>
+
+
+          <a href="<%= product_path(product) %>" class="btn btn-light btn-md products">Choose Plan</a>
+        </ul>  </div>
+      </div>
+    </div>
+    <% end %>
+
+  <div class="row flex-items-xs-middle flex-items-xs-center">
+      <div class="col-xs-12 col-lg-4">
+ <div class="card products text-xs-center">
+   <div class="card-header products">
+     <h3 class="display-2"><%=image_tag("wall_ring.jpg", alt: "logo", class: "img-fluid wall_ring")%></h3></div>
+<a href="#">
+  <div class="card-block products">
+ <h4 class="card-title products">multiple facilities</h4></a>
+ <ul class='list-group'>
+ <li class="list-group-item products">contact us if you have many properties</li>
+     <li class="list-group-item products">we will customize your price</li>
+     <a href="mailto:getzober@zober.co?" class='contact-address'>zober@zober.co</a>
+
+   </ul>
+</div>
+</div>
+</div>
+ </div>
+
+</section>
+
+
+
+<section>
+  <div class="container-fluid">
+<%= render "layouts/footer_main" %>
+</div>
+</section>

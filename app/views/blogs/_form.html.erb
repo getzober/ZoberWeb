@@ -1,0 +1,45 @@
+<div class="container-fluid">
+<% if @blog.errors.any? %>
+     <div>
+          <p><%= pluralize(@blog.errors.count, "error") %> prevented this blog from saving.</p>
+          <ul>
+               <% @blog.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+               <% end %>
+          </ul>
+     </div>
+<% end %>
+<%= form_for @blog do |f| %>
+
+<p>
+<%= f.label :title, class: "form-label-title" %><br>
+<%= f.text_field :title, class: "field-title" %>
+</p><br>
+
+<%=f.label :post, class: "form-label-post" %><br>
+<%= f.cktext_area :post %>
+
+<p>
+<%= f.label :author_name, class: "form-label-name" %><br>
+<%= f.text_field :name, class:  "field-name" %>
+</p>
+<p>
+  <div class="field">
+  <%= f.label :topic_id, class: "form-label-name" %>
+  <%= f.collection_select :topic_id, Topic.all, :id, :name, class: "form-topic" %>
+</div>
+</p>
+
+<p>
+  <%= f.label :website, class: "form-label-website" %><br>
+  <%= f.text_field :website,  class: "field-website" %>
+</p>
+<p>
+  <%= f.label :image, class:"form-label-image" %><br>
+  <%= f.file_field :image %><br>
+</p>
+<p>
+  <%= f.submit %>
+<% end %>
+</p>
+</div>

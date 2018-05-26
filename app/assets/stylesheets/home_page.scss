@@ -1,0 +1,170 @@
+// Place all the styles related to the home_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%
+}
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+}
+//nav bar styling//
+// .tinylogo {margin-right: 100px;}
+.navbar-light .navbar-toggler {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+.nav-item {color:white;}
+
+.nav-link { color: #ffffff; }
+.navbar-light .navbar-nav .nav-link {color: #ffffff;}
+.navbar-toggler .navbar-toggler-right {color:#ffffff; border-radius: 1px solid #ffffff;}
+.navbar-toggler .navbar-toggler-right:hover{background-color: #ffffff; color: #626262;}
+//masthead styling
+.masthead {
+  display: table;
+
+  width: 100%;
+  height: auto;
+  padding: 200px 0;
+
+  text-align: center;
+
+  color: white;
+  background: url('lifebuoy.jpg') no-repeat ;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .intro-body {
+    display: table-cell;
+
+    vertical-align: middle;
+    .brand-heading {
+      font-size: 50px;
+    }
+    .intro-text {
+      font-size: 18px;
+    }
+  }
+  @media(min-width:768px) {
+    height: 100%;
+    padding: 0;
+    .intro-body {
+      .brand-heading {
+        font-size: 100px;
+      }
+      .intro-text {
+        font-size: 32px;
+        font-family: 'Raleway', sans-serif;
+      }
+    }
+  }
+}
+#lifebuoy {
+
+  text-align: center;
+}
+
+//download section styling
+#download {
+  height: 400px;
+}
+// button styling
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    transition: all .5s;
+    border-color: 2px solid #ffffff ;
+    border-radius: 0;
+    font-family: 'Raleway', sans-serif;
+}
+.btn-light.btn-outline {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 0;
+}
+.btn-light.btn-outline:hover {
+  color: #fff;
+  border-radius: 0;
+}
+.row-fluid.image {
+  text-align:center;
+}
+.img-fluid.mx-auto {
+  text-align:center;
+  margin:none;
+}
+.main_page {overflow-y: hidden;}
+
+//modal styling//
+// .login_modal_footer{margin-top:5px; back-ground-color: #f47f49;}
+// .login_modal_header .modal-title {text-align: center;font-family:'raleway'; font-size:24px;}
+// .form-group{position: relative;}
+// .form-group .login-field-icon {
+//     font-size: 16px;
+//     position: absolute;
+//     // right: 15px;
+//     top: 3px;
+//     transition: all 0.25s ease 0s;
+//     padding-top: 2%;
+// }
+// .login-modal{
+//     width:100%;
+//     padding-bottom:20px;
+// }
+// .login_modal_header, .login_modal_footer {background:  #f47f49 !important;color:#fff;}
+// .modal-register-btn{margin: 4% 33% 2% 33% ;width:100%;}
+// .login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
+// .modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
+// .modal-body-right{float:right; width:47%;}
+// .login-link{padding:0 20%; color: grey; font-size:16px; font-family: raleway; width:100%;}
+//
+// .facebook, .google, {width:100%;height:40px; padding-top:2%; margin-top:20%;}
+// .modal-icons{margin-left: -10px; margin-right: 20px;}
+// .google, .google:hover{background-color:#dd4b39;border:2px solid #dd4b39;color:#fff;}
+//
+// .facebook, .facebook:hover{background-color: #3b5999; border:2px solid #3b5999;color:#fff;}
+//
+// #social-icons-container{position: relative;}
+// #center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
+// .modal-login-btn{width:100%;height:40px; margin-bottom:10px; color:white; background-color:#626262;}
+// #modal-launcher{margin: 30% 0 0 30%; }
+
+//search bar styling//
+#search {width:80%;}
+.search_field {border-radius: 15 15px 15px 15; width:80%;}
+#search_form {display:inline;}
+.house_submit{border-radius: 15 15px 15px 15; color:white;   background-color: #f47f49;  -webkit-transition-duration: 0.4s;}
+.house_submit:hover{ background-color: #fcfcfc;
+    color: #626262;}
+.search_field {width: 100%; padding-left:20px; font-style: italic;}
+input {display:inline; border-radius: 15px 15px 15px 15px;}
+//nav link styling//
+a{color:white;
+text-align:center;
+}
+li.nav-item{
+  color:white;
+}
+.dropdown-toggle {color:white;}
+.dropdown-toggle:hover {color:white;}
+.link_items {color:#f47f49}
+.link_items:hover {color:#f47f49}
+.img-fluid.mx-auto {width:60%; margin-left:20%; margin-right:20%;}
+//css for user profile partial
+.container-fluid.users {margin-top:140px;}
+.display-4 {font-family:raleway; color:#f47f49;}

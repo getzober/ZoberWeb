@@ -1,0 +1,64 @@
+<section>
+  <%= render 'layouts/header' %>
+</section>
+
+<section id="content-details" class="row clearfix">
+
+       <div id="details-article" class="col-sm-12">
+           <h1 id="article-title"><%= @product.title %><br><span class="font-weight-light"><%= @product.subtitle %></span></h1>
+
+           <div class="row-fluid product">
+<p class="product_desc">
+       <%= raw @product.description %></p>
+     </div>
+   </div>
+       <aside id="details-aside" class="col-sm-12 products">
+
+
+                    <%= form_tag charges_path, id:'chargeForm' do %>
+
+                   <% if flash[:error].present? %>
+                     <div id="error_explanation">
+                       <p><%= flash[:error] %></p>
+                     </div>
+                   <% end %>
+
+                 <script src="https://checkout.stripe.com/checkout.js"></script>
+                 <%= hidden_field_tag 'stripeToken' %>
+                 <%= hidden_field_tag 'amount', @product.price %>
+                 <%= hidden_field_tag 'stripeEmail'  %>
+
+                 <%= hidden_field_tag 'product_id', @product.id %>
+
+                 <div class="col-sm-12 ">
+                 <button id="btn-buy" type="button" class="btn btn-lg "><span class="glyphicon glyphicon-ok"></span>get this plan!</button>
+               </div>
+
+<script>
+   var handler = StripeCheckout.configure({
+     key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+     token: function(token, arg) {
+       document.getElementById("stripeToken").value = token.id;
+       document.getElementById("stripeEmail").value = token.email;
+       document.getElementById("chargeForm").submit();
+     }
+});
+document.getElementById('btn-buy').addEventListener('click', function(e) {
+     handler.open({
+       name: 'zober',
+description: '<%= @product.title %> ($<%= @product.price_in_cents %>)',
+
+       amount: document.getElementById("amount").value
+   });
+   e.preventDefault();
+  })
+</script>
+<% end %>
+
+       </aside>
+   </section>
+
+   <section>
+     <%= render 'layouts/footer_main' %>
+
+   </section>

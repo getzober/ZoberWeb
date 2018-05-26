@@ -1,0 +1,16 @@
+<div class="comment clearfix">
+  <div class="posts-comments">
+<%= form_for(@blog, blog.comments.build) do |f| %>
+<div class="container-fluid comments">
+  <h3 class="comments-count">add a comment:</h3>
+<p class="comment-body-form">
+  <%= f.label :comment,class:"comment-label" %><br>
+  <%= f.text_area :body, class: "comment-body-form" %>
+</p>
+<br>
+
+<p class="submit-comment"><%= f.submit  %></p>
+<% end %>
+</div>
+</div>
+</div>

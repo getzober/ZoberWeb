@@ -1,0 +1,16 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container-fluid.provider_homes {margin-top:40px; margin-bottom:40px;}
+.card.text-center.provider {margin-left:10px; margin-right:10px; border: 1px solid #f47f49}
+.card.provider {margin-top:140px; margin-bottom:40px; }
+.card-title.provider_home {font-family:raleway; font-weight:200; font-size:2rem;}
+.card-header.provider {font-family:raleway; font-weight:400; font-size: 3rem;color:#fff; background-color: #f47f49;}
+.card-title.provider_home {font-family:raleway; padding-left:20px; color:#626262;}
+.card-text.provider_home {font-family:raleway; padding-left:20px; color:#626262; font-size:1.5rem;}
+.card-block.provider {border: 1px solid #f47f49;  padding-bottom:20px; padding-top:20px;}
+.card-block.provider_home {padding:10px; }
+.card-header.add_homes {color:#fff; background-color: #f47f49; font-family:raleway;}
+.card.text-center.provider_home {  padding-bottom:10px;}
+.text-center.homes {font-size:4rem; font-weight:400px; color:#f47f49; font-family:raleway;}

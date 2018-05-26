@@ -1,0 +1,59 @@
+<section>
+<%= render "layouts/header" %>
+</section>
+<header class="masthead3">
+  <div class="intro-body">
+    <div class="row-fluid image">
+      <div class="img-fluid mx-auto" id="coffee">
+
+<h2 class="blog_title">Spirituality<h2>
+
+        <div class="col-md-10 mx-auto">
+
+          <div class="row-fluid">
+            <h2 class="blog_info">hello</h2>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+
+<% @blogs_by_category.each do |blog| %>
+<div class="panel">
+<p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
+  <h3 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h3>
+  <p><%= truncate(sanitize(blog.post, length: 550, class: "date")) %>   <%= link_to "read more", blog, class: "read-more" %></p>
+
+</div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+<div id="main_content">
+<% if admin_signed_in? %>
+    <div class="buttons">
+      <button class="button"><%= link_to "new blog", new_blog_path, class: "new-blog-link" %></button>
+
+
+    </div>
+<% end %>
+  <% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert") %>
+  <% end %>
+</div>
+
+
+
+
+<section>
+<%= render 'layouts/footer_main' %>
+</section>

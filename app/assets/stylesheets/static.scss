@@ -1,0 +1,46 @@
+// Place all the styles related to the Static controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//static and privacy pae styling//
+.wrapper_fluid {
+  margin-top:200px;
+}
+.contact{text-align:center; font-family:Raleway; color:#f47f49; font-size:6rem; font-weight:1000;}
+.company{text-align:center; font-family:Raleway}
+.text-list-contact{margin-top: 60px;background-color:white;text-align:center; font-family:Raleway; color:#626262; font-weight:500; font-size: 3rem;}
+.contact-address {text-align:center; font-family:Raleway; color:#626262; font-weight:300; border-bottom: 2px solid #f47f49; font-size: 1.5rem;}
+body{color: #ffffff;}
+.text-list{color:white;}
+.col-sm-12 {text-align:center;}
+.col-sm-6{display:inline; text-align:center; font-size: 1.5rem; font-weight:400; font-family:Raleway; color: #c0c0c0;}
+.container-fluid.privacy{margin-top:140px;}
+.privacy { font-size:48px; font-family:roboto,sans-serif; }
+//about page styling//
+.container-fluid.about{margin-top:140px; }
+.container-fluid.about { margin-bottom:80px;}
+.card.text-center.about {margin-left:10px; margin-right:10px;  height:800px;}
+.card.about {margin-top:140px; margin-bottom:40px; }
+.card-title.about {font-family:raleway; font-weight:200; font-size:2rem;}
+.card-header.about {font-family:raleway; font-weight:400; font-size: 3rem;color:#fff; background-color: #f47f49;}
+.card-title.about {font-family:raleway; padding-left:20px; color:#626262;}
+.card-text.about {font-family:raleway; padding-left:20px; color:#626262; font-size:1.5rem;}
+
+.card-block.about {padding:10px; }
+.about-staff{text-align:center; margin-top:40px; font-size:48px; font-weight:600; font-family:raleway; }
+.about-title{text-align:center; font-family:raleway; font-weight:400; font-size:4rem; }
+.card.text-center.about {  padding-bottom:10px;}
+.img-responsive {margin-top: 20px; width: 100%;
+  height: auto;}
+.rounded-circle{position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;}
+  @media (min-width: 992px) and (max-width: 1199px) {
+     .team-member img {
+        height: 100px;
+    }
+}
+.col-sm-12.about {text-align:left; border:1px solid #f47f49;padding:40px;margin-top:40px;}
+.row-fluid .about{margin-top:140px;}
+.btn .about{background-color:black; color:#f47f49}

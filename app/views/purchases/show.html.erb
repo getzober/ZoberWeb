@@ -1,0 +1,30 @@
+<header>
+  <%= render 'layouts/header' %>
+<!-- <h1>PURCHASES WOO</h1>
+<p>Your purchase is <%= @purchase.inspect %></p> -->
+<section id="content-receipt" class="clearfix">
+  <div id=receipt-container>
+    <div id='receipt-content'>
+      <h4 id="receipt-title">Thank you from zober!</h4>
+      <p><strong>RECEIPT</strong></p>
+      <div id="receipt-details" class="row clearfix">
+        <div class="col-sm-8 receipt-left">
+          <p><strong class="font-weight-heavy"><%= @product.title %></strong><br/><span class="font-weight-light"><%= @product.subtitle %></span></p>
+          </div>
+          <div class="col-sm-4">
+        $<%= @product.price %>
+          </div>
+        </div><a href=""></a>
+        <button type="button" class="btn btn-success btn-xs">download</button></a>
+        <footer id="receipt-footer">
+          <small>your purchase is complete. we hope you enjoy your time with us!</small>
+        </footer>
+      </div>
+      <div class="dotmatrix right"></div>
+    </div>
+    <div id="receipt-shadow"></div>
+  </section>
+
+
+<button>Return to Dashboard</button>
+<%= render 'layouts/footer_main' %>

@@ -1,0 +1,38 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-label {font-family: roboto, sans-serif; color:white; font-size:24px; font-weight:200;}
+h3.comments-count{color:white; font-family:roboto, sans-serif; text-align:left;}
+text_area{font-family: roboto, sans-serif;}
+.new_comment{ margin-left:60px;}
+.delete-link {color: #626262; margin-left:60px}
+.edit-link{color:#626262;}
+.post-comments{
+border-top: 1px solid #626262;
+margin-top: 60px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+	margin-right: 0px;
+    padding: 10px 20px;
+    position: relative;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+       	 -o-border-radius: 4px;
+    		border-radius: 4px;
+	background-color: #f47f49;
+	color: #f47f49;
+	position: relative;
+  font-family: roboto, sans-serif;
+}
+.comments-count{  font-family: roboto, sans-serif;
+  margin-bottom: 20px; margin-top:20px; color:#ffffff;
+
+margin-right: 40px;
+  padding: 10px 20px;
+  position: relative;}
+.submit-comment{color:#ffffff; background-color:#f47f49; font-family:roboto, sans-serif;}
+.submit-comment{color:#f47f49; background-color:#626262;}
+    .meta{font-family: roboto, sans-serif; font-size:14px;}
+    .comment-body{font-family: roboto, sans-serif;font-size:18px;}
+    .comment-body-form{font-family: roboto, sans-serif;font-size:18px; float:left;}
+		.comment.clearfix{margin-top:100px; border-top:1px solid black; padding-top:20px; background-color:#626262;}

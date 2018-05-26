@@ -1,0 +1,35 @@
+<section>
+<%= render "layouts/header" %>
+</section>
+<section>
+  <div class='container-fluid categories'>
+    <div class="row m-t-md">
+      <% Topic.order("RANDOM()").each do |topic| %>
+    <div class="col-xs-12 col-md-3">
+        <img align="middle" class="img-responsive topic" src="https://snap-photos.s3.amazonaws.com/img-thumbs/960w/1U2EGZ07GU.jpg" alt="Deer in nature" />
+
+        <div class="card-img-overlay">
+          <div class="topic_name">
+           <%= link_to topic.name, topic, class:"topic_link" %>
+         </div>
+
+        </div>
+
+    </div>
+    <% end %>
+
+</div>
+
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <% if current_admin %>
+  <%= link_to 'new', new_blog_path(@blog), class: "new-link" %>
+    <% end %>
+  </div>
+</div>
+</section>
+
+<section>
+<%= render 'layouts/footer_main' %>
+</section>

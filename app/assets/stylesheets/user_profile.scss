@@ -1,0 +1,40 @@
+body {
+  float: right;
+}
+.user-l {
+  padding-right: 6px;
+}
+.user-r {
+  padding-left: 6px;
+}
+.user-l >img,
+.user-r >img {
+  width: 150px;
+}
+.redes >ul li a {
+  width: 42px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10em;
+  border: #EEE 1px solid;
+}
+.redes >ul li span {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.profile-container {
+  padding: 20px;
+}
+
+.profile-selection-list {
+  display: -webkit-inline-box;
+  overflow: scroll;
+}
+h4.card-header {font-family:raleway; font-size:4rem; font-weight:300; color:#f47f49; background-color:#ffffff;}
+.card-title.user {color:#626262; font-family: raleway;}
+.card-text.user{color:#626262; font-family: raleway;}
+.small-user{color:#626262; font-family: raleway;}
+.user_email{color:#626262; font-family: raleway;}
+h1.display-4{background-color:#ffffff; color:#f47f49; font-family:raleway;}
+a.btn.btn-raised{background-color:#626262; color:#ffffff;}

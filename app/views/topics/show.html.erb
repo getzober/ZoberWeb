@@ -1,0 +1,143 @@
+<section>
+<%= render "layouts/header" %>
+</section>
+<header class="masthead3">
+  <div class="intro-body">
+    <div class="row-fluid image">
+
+<%= image_tag(@blogs.first.image_url.to_s, :class=> "img-fluid blog_topic") %>
+<h2 class="blog_title"><h2>
+
+        <div class="col-md-10 mx-auto">
+
+          <!-- <div class="row-fluid">
+            <h2 class="blog_info"><%= @topic.name %></h2>
+            <p>website info can be here</p>
+
+
+        </div> -->
+      </div>
+    </div>
+  </div>
+</header>
+<div class ="center">
+  <div id="blogs">
+    <div class="float-right-area">
+    <div class="inner-right">
+
+
+  <!-- <button class="btn btn-lg btn-light blogs"><%= link_to "all blogs", blogs_path %></button> -->
+  <h2 class="blog_archive">archive</h2>
+  <ul>
+  <% if @blogs.to_a.empty? %>
+  <div class="post">
+      <p>No articles found...</p>
+  </div>
+  <% else %>
+  <% current_month = 0 %>
+  <% current_year = 0 %>
+  <% for blog in @blogs %>
+    <% if (blog.created_at.year != current_year)
+       current_year = blog.created_at.year
+     %>
+        <h3 class="archiveyear"><%= blog.created_at.year%></h3>
+  <% end %>
+  <% if (blog.created_at.month != current_month || blog.created_at.year != current_year)
+   current_month = blog.created_at.month
+   current_year = blog.created_at.year
+  %>
+
+  <h4 class="archivemonth"><%= (Date::MONTHNAMES[blog.created_at.month]) %></h4>
+  <% end %>
+  <li>
+  <div class="archivepost">
+  <%= link_to blog.title, blog_path(blog), :remote => true, class:"archive_link" %> on <%= blog.created_at.strftime('%A')%> - <%= blog.created_at.strftime('%d') + "th"%>
+  </div></li>
+  <% end %>
+  <%end %>
+
+  </ul>
+  </div>
+  </div>
+  <div class="float-left-area">
+  <div class="inner-left">
+
+  <% @blogs.each do |blog| %>
+
+      <h1 class="blog_title"><%= blog.title %></h1>
+      <article class="blog-content">
+
+                <div class="col-lg-8 col-md-10 mx-auto blog">
+
+
+        <%= raw(blog.post)%>
+
+
+      </div>
+
+      </article>
+
+      <p class="website"><strong> website:</strong>
+        <%= link_to blog.website, "http://#{blog.website}", class: "website-form-link" %></p>
+        <% if current_admin %>
+        <div>
+
+          <%= link_to 'edit', edit_blog_path(blog), class: "edit-link" %>
+          <%= link_to 'delete', blog_path(blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
+        </div>
+        <% else %>
+        <%= social_share_button_tag(blog.title) %>
+
+
+        <!-- <div id="comments">
+          <h2 class="comments-count"><%= blog.comments.count %> comments</h2><br>
+
+        <%= render blog.comments %> -->
+
+        <% end %>
+
+
+      </div>
+  <% end %>
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+<section>
+  <%= render 'layouts/footer_main'%>
+  </section>
+
+<!-- <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+
+<% @blogs.each do |blog| %>
+<div class="panel">
+<p class="date"><%= blog.created_at.strftime("%B, %d, %Y" ) %> </p>
+  <h3 class="title"><%= link_to blog.title, blog, class: "blog_link" %> </h3>
+  <p><%= truncate(sanitize(blog.post, length: 550, class: "date")) %>   <%= link_to "read more", blog, class: "read-more" %></p>
+
+</div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+
+<div id="main_content">
+<% if admin_signed_in? %>
+    <div class="buttons">
+      <button class="button"><%= link_to "new blog", new_blog_path, class: "new-blog-link" %></button>
+
+
+    </div>
+<% end %>
+  <% flash.each do |name, msg| %>
+  <%= content_tag(:div, msg, class: "alert") %>
+  <% end %>
+</div>

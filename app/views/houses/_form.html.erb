@@ -1,0 +1,196 @@
+<div class="container-fluid">
+  <div class="col-sm-12 mx-auto">
+    <div class="form-area">
+      <h3>Please complete a separate form for each facility<h3>
+    <%= form_for House.new do |f|%>
+<div class="row-fluid internet">
+  <div class="col-sm-6">
+<%= f.label :house_name, class: "label-house"%>
+<%=f.text_field :name, class: "field-house"%>
+</div>
+<div class="col-sm-6">
+<%= f.label :street, class: "label-house"%>
+<%=f.text_field :address, class: "field-house"%>
+</div>
+</div>
+
+<div class="row-fluid internet">
+  <div class="col-sm-6 ">
+<%= f.label :city, class: "label-house"%>
+<%=f.text_field :city, class:"field-house"%>
+</div>
+  <div class="col-sm-6">
+<%= f.label :state, class: "label-house" %>
+<%=f.text_field :state, class: "field-house"%>
+</div>
+</div>
+<div class="row-fluid internet">
+  <div class="col-sm-6">
+<%= f.label :zip_code, class: "label-house"%>
+<%=f.text_field :zip_code, class: "field-house"%>
+</div>
+<div class="col-sm-6">
+
+<%= f.label :email, class: "label-house"%>
+<%=f.text_field :email, class: "field-house"%>
+</div>
+</div>
+<div class="row-fluid internet">
+  <div class="col-sm-6">
+<%= f.label :website, class: "label-house"%>
+<%=f.text_field :website, class: "field-house"%>
+
+</div>
+
+  <div class="col-sm-6">
+<%= f.label :facebook, class: "label-house"%>
+<%=f.text_field :facebook, class: "field-house"%>
+</div>
+</div>
+<div class="row-fluid internet">
+  <div class="col-sm-6">
+<%= f.label :linkedin, class: "label-house"%>
+<%=f.text_field :linkedin, class: "field-house"%>
+</div>
+<div class="col-sm-6">
+<%= f.label :twitter, class: "label-house"%>
+<%=f.text_field :twitter, class: "field-house" %>
+</div>
+</div>
+<div class="row-fluid internet">
+  <div class="col-sm-6">
+<%= f.label :capacity, class: "label-house"%>
+<%=f.text_field :capacity, class: "field-house"%>
+</div>
+<div class="col-sm-6">
+<%= f.label :price, class: "label-house"%>
+<%=f.text_field :price, class: "field-house"%>
+</div>
+</div>
+<div class="row-fluid internet">
+  <div class="col-sm-6">
+<%= f.label :deposit, class: "label-house"%>
+<%=f.text_field :deposit, class: "field-house"%>
+</div>
+</div>
+
+<!-- not showing this chunk of code -->
+<% if false %>
+<div class = "row-fluid internet">
+  <h6>Which genders can stay at your facility?</h6>
+<%= radio_button_tag(:gender, "male") %>
+<%= label_tag(:gender, "Men Only", class: "label-house") %>
+<%= radio_button_tag(:gender, "female") %>
+<%= label_tag(:gender, "Women only", class: "label-house") %>
+<%= radio_button_tag(:gender, "coed") %>
+<%= label_tag(:gender_coed, "Coed", class: "label-house") %>
+</div>
+<div class="row-fluid internet">
+  <h6>Which payment forms do you accept</h6>
+<%= check_box_tag(:payment_forms) %>
+<%= label_tag(:credit, "Credit Cards", class: "label-house") %>
+<%= check_box_tag(:payment_forms) %>
+<%= label_tag(:cash, "Cash", class: "label-house") %>
+<%= check_box_tag(:payment_forms) %>
+<%= label_tag(:check, "Check", class: "label-house") %>
+</div>
+<div class="row-fluid internet">
+<h6>Do you take insurance? Check yes if you do</h6>
+<%= f.check_box(:insurance, {}, "True", "False") %>
+</div>
+<div class="row-fluid internet">
+
+  <h6>Property description. Please describe your property in 500 words or less</h6>
+  <%=f.text_area :property_description , class: "field-house"%>
+</div>
+<div class="row-fluid internet"><h6>Please describe the neighborhood surrounding the property</h6>
+  <!-- <%= f.label :neighborhood %> -->
+  <%= f.text_area :neighborhood, class: "field-house"  %>
+</div>
+<div class="row-fluid internet">
+  <h6>What is your smoking policy?</h6>
+<%= check_box_tag(:smoking_policy) %>
+<%= label_tag(:smoking_policy, "No Smoking", class: "label-house") %>
+<%= check_box_tag(:smoking_policy) %>
+<%= label_tag(:smoking_policy, "Vaping allowed", class: "label-house") %>
+<%= check_box_tag(:smoking_policy) %>
+<%= label_tag(:smoking_policy, "Smoking allowed outside", class: "label-house") %>
+</div>
+
+<div class="row-fluid internet">
+  <h6>  Is transportation to the facility provided? check if yes</h6>
+<%= f.check_box(:transportation, {}, "True", "False") %>
+</div>
+<div class="row-fluid internet">
+<h6>Is parking available? check if yes</h6>
+<%= f.check_box(:parking, {}, "True", "False") %>
+</div>
+<div class="row-fluid internet">
+
+  <h6> Please describe some of the activites you provide for your guests. For example: pool, hot-tub, airhockey etc. </h6>
+</div>
+<%= f.text_area :activities, class: "field-house" %>
+
+<div class="row-fluid internet">
+  <h6> What does the standard room provide? For example: cupboards, dresser etc. </h6>
+<%= f.text_area :room_amenities, class: "field-house" %>
+</div>
+<div class="row-fluid internet">
+
+    <h6>Is there a hot-tub? Check if yes.</h6>
+  <%= f.check_box(:hotttub, {}, "True", "False") %>
+</div>
+
+<div class="row-fluid internet">
+  <h6>Is there a/c? Check if yes.</h6>
+<%= f.check_box(:ac, {}, "True", "False") %>
+</div>
+<div class="row-fluid internet">
+  <h6>Is there heating? Check if yes.</h6>
+<%= f.check_box(:heating, {}, "True", "False") %>
+</div>
+
+
+<div class="row-fluid internet">
+  <h6>Is there internet available, and if so, what type?</h6>
+<%= check_box_tag(:internet) %>
+<%= label_tag(:internet, "None", class: "label-house") %>
+<%= check_box_tag(:internet) %>
+<%= label_tag(:internet, "Wifi", class: "label-house") %>
+<%= check_box_tag(:internet) %>
+<%= label_tag(:internet, "Ethernet", class: "label-house") %>
+</div>
+<% end %>
+<!-- not showing this chunk of code -->
+
+
+
+<div class="container-fluid-image">
+  <h6>Please add 5 images of your property</h6>
+<div class="row-fluid-image">
+
+  <div class="col-sm-6 image">
+    <%= f.file_field :image %><br>
+  </div>
+    <div class="col-sm-6 image">
+    <%= f.file_field :image %><br>
+  </div>
+  <div class="col-sm-6 image">
+    <%= f.file_field :image %><br>
+  </div>
+  <div class="row-fluid-image">
+  <div class="col-sm-6 image">
+    <%= f.file_field :image %><br>
+  </div>
+    <div class="col-sm-6 image">
+    <%= f.file_field :image %><br>
+  </div>
+
+</div>
+</div>
+</div>
+<%= f.submit %>
+<% end %>
+  </div>
+</div>
+</div>

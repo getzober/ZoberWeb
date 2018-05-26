@@ -1,0 +1,43 @@
+// Place all the styles related to the providers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.signup {
+  margin-top: 80px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400;
+
+}
+.card.h-100{
+
+background-color: #f47f49;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin-bottom: 10px; margin-top:10px;
+}
+.card-block.plans{ background-color: #f47f49;}
+.card-title.plans {
+  color: #ffffff; font-size: 24px;
+  padding-top: 20px; padding-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+
+}
+.card-text.plans{
+  color:white;  padding-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+.provider_btn{
+  margin-bottom: 20px;
+  font-family: 'Raleway', sans-serif;
+
+}
+h2.plans_list {font-family: 'Raleway', sans-serif; color:#f47f49; font-weight:400; font-size:32px;}
+.pick {font-family: 'Raleway', sans-serif; color:grey; text-align:center}
+// nav {
+//   background-color: #ef8b3e;
+//
+// }
+.nav-link.js-scroll-trigger {
+  color: white;
+}
+.col-sm-12.why {margin-top:40px; padding-top: 60px; padding-bottom:60px; border-top: 1px solid #626262; border-bottom: 1px solid #626262; color:#626262;}
+.col-sm-12.mx-auto {text-align:center;}
+h6 {color: #626262; font-size:18px;}

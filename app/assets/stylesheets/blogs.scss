@@ -1,0 +1,199 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+p {
+  line-height: 1.5;
+  margin: 30px 0;
+font-family:raleway;}
+  // p a {
+  //   text-decoration: underline; }
+    h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  font-family: 'raleway'; }
+  .section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 60px; }
+  img::selection {
+  color: #fff;
+  background: transparent; }
+  .masthead3 {
+    display: table;
+
+    width: 100%;
+    height: auto;
+    padding: 200px 0;
+
+    text-align: center;
+
+    color: white;
+    // background: url('coffee.jpg') no-repeat bottom center scroll;
+    // background-color: black;
+    opacity: .6;
+     // background-color: #212529;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    .intro-body {
+      display: table-cell;
+
+      vertical-align: middle;
+      .brand-heading {
+        font-size: 50px;
+      }
+      .intro-text {
+        font-size: 18px;
+      }
+    }
+    @media(min-width:768px) {
+      height: 100%;
+      padding: 0;
+      .intro-body {
+        .brand-heading {
+          font-size: 100px;
+        }
+        .intro-text {
+          font-size: 32px;
+          font-family: 'Raleway', sans-serif;
+        }
+      }
+    }
+  }
+  .blog_title {font-size:6rem; font-color:#626262; font-family:raleway; font-weight:400; text-align:center;}
+  .blog_info { font-size:4rem; font-color:#fff; font-family:roboto; font-weght:200;}
+
+
+.blog_link {color: #f47f49; font-weight: 400; font-size: 3rem; font-family: 'roboto', sans-serif;}
+.edit-link {color: #f47f49; font-family: 'robot', sans-serif;}
+.delete-link {color: #f47f49; font-family: 'roboto', sans-serif;}
+// .page-wrapper {margin-top:160px;}
+.title {text-align:left; margin-top:40px;margin-bottom:40px; font-family: 'roboto', sans-serif;}
+.image-responsive {max-width:360px;}
+.body-post { font-family: 'robot', sans-serif; font-size:24px;}
+.comments-count {font-family: 'roboto', sans-serif; font-size:24px; font-weight:200; color:#626262; float:left;}
+
+//show page for blogs
+article
+{
+  margin-bottom: 20px;
+  margin-left: 60px;
+margin-right: 0px;
+  padding: 10px 20px;
+  position: relative;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+       -o-border-radius: 4px;
+      // border-radius: 4px;
+background: #fff;
+color: #6b6e80;
+position: relative;}
+.date {font-family: raleway, sans-serif; font-size:16px; color:#626262; float:left;}
+.panel
+//index page for blogs
+{border: 1px solid #626262;
+  margin-top:40px;
+  margin-bottom: 20px;
+  margin-left: 60px;
+margin-right: 0px;
+  padding: 10px 20px;
+  // position: relative;
+  box-shadow: 10px 5px 5px #c0c0c0;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+       -o-border-radius: 4px;
+      border-radius: 4px;
+background: #fcfcfc;
+color: #6b6e80;
+position: relative; }
+.read-more {color:#f47f49;margin-left:20px; font-family: roboto, sans-serif;}
+.name {font-family: roboto, sans-serif; font-size:20px;}
+.blog-content{  margin:auto; background-color:#fff; font-family:raleway; font-size: 18px;}
+.form-label-title{font-family: roboto, sans-serif; font-size:20px;}
+.form-label-post{font-family: roboto, sans-serif; font-size:20px;}
+.form-label-name{font-family: roboto, sans-serif; font-size:20px;}
+.form-label-website{font-family: roboto, sans-serif; font-size:20px;}
+.form-label-image{font-family: roboto, sans-serif; font-size:20px;}
+.field-website{width:250px; border-radius:0 0 0 0;}
+.field-name{width:250px; border-radius:0 0 0 0;}
+.field-title{width:250px; border-radius:0 0 0 0;}
+.website{color: #f47f49; font-family:raleway; text-align:center;}
+
+.name {font-family: raleway, sans-serif; font-size:16px; color:#626262; float: left;}
+.website-form-link {color:#626262; font-size:16px; font-family: roboto, sans-serif; }
+.img-fluid.blog {float:left; padding:20px; border:1px solid #626262;  background-color: #edecea;}
+//link button from show page to all blogs//
+.btn.btn-lg.btn-light.blogs { color:#ffffff; background-color:#626262; width:40%; margin-left:30%; margin-right:30%; font-family:roboto, sans-serif;}
+.btn.btn-lg.btn-light.blogs:hover {color: #f47f49; background-color: #f47f49; border-radius: 1px solid #626262}
+//index page css for edit and new blog buttons//
+.button{border-radius: 15px; color:#f47f49;}
+.button:hover{background-color:#f47f49;}
+.new-blog-link{color:#f47f49;}
+.new-blog-link:hover{color:#fff; background-color:#f47f49;}
+.logout-link{color:#f47f49;}
+.logout-link:hover{color:#fff; background-color:#f47f49; }
+.page-wrapper.blog {margin-top:140px;}
+.title {color:black; font-family:raleway, sans-serif;;}
+.float-left-area  {
+		  width: 75%;
+		  float: left;
+		  }
+
+.float-right-area {
+		  width: 25%;
+		  float: left;
+        background-color: #fff;;
+		  }
+
+.inner-left	  {
+		  padding: 5px 5px 5px 5px;
+		  margin-right: 10px;
+
+		  min-height: 00px;
+      background-color: #fff;
+
+		  }
+
+.inner-right	  {
+		  font-size: 11px;
+		  padding: 5px 5px 5px 5px;
+		  border-right: #999999 1px solid;
+		  min-height: 840px;
+		  }
+      .archive_link {color:#626262;}
+      .blog_archive {color:#f47f49; font-size:48px; font-family:raleway, sans-serif; text-align:center;}
+.archive_link{color:black; font-family:raleway, sans-serif;}
+.container-fluid.show_blog{  background: url('sunset.jpg') no-repeat bottom center scroll;}
+//for the blog index page styling//
+.container-fluid.categories {margin-top:140px;}
+a {
+  -webkit-transition: .25s all;
+  transition: .25s all;
+}
+.topic_name {text-align:center; margin-top:30px; font-family:raleway;}
+.img-responsive .topic {width: 100%; height:100%;}
+
+
+.card-inverse .card-img-overlay .category:focus,
+.card-inverse .card-img-overlay .category:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-inverse .card-img-overlay .category{
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: .25s box-shadow;
+  transition: .25s box-shadow;
+  // background-color: rgba(80, 80, 80, 0.85);
+  border-color: rgba(51, 51, 51, 0.85);
+  padding-left: 0;
+  padding-right: 0;
+}
+.topic_link{font-size:3rem; font-family:raleway;}
+.topic_link:hover{color:#f47f49;}
+.new-link {color:#626262; text-align:center; font-size:3rem;}

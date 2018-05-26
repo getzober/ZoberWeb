@@ -1,0 +1,115 @@
+<header>
+  <%= render 'layouts/header' %>
+</header>
+<main>
+
+<div class="container-fluid show_blog">
+  <div class="float-right-area">
+  <div class="inner-right">
+
+
+<button class="btn btn-lg btn-light blogs"><%= link_to "all blogs", blogs_path %></button>
+<h2 class="blog_archive">archive</h2>
+<ul>
+<% if @blogs.to_a.empty? %>
+<div class="post">
+    <p>No articles found...</p>
+</div>
+<% else %>
+<% current_month = 0 %>
+<% current_year = 0 %>
+<% for blog in @blogs %>
+  <% if (blog.created_at.year != current_year)
+     current_year = blog.created_at.year
+   %>
+      <h3 class="archiveyear"><%= blog.created_at.year%></h3>
+<% end %>
+<% if (blog.created_at.month != current_month || blog.created_at.year != current_year)
+ current_month = blog.created_at.month
+ current_year = blog.created_at.year
+%>
+
+<h4 class="archivemonth"><%= (Date::MONTHNAMES[blog.created_at.month]) %></h4>
+<% end %>
+<li>
+<div class="archivepost">
+<%= link_to blog.title, blog_path(blog), :remote => true, class:"archive_link" %> on <%= blog.created_at.strftime('%A')%> - <%= blog.created_at.strftime('%d') + "th"%>
+</div></li>
+<% end %>
+<%end %>
+
+</ul>
+</div>
+</div>
+
+  <div class="float-left-area">
+  <div class="inner-left">
+
+
+
+
+
+    <div class="row-fluid">
+
+              <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+
+                  <%= image_tag(@blog.image_url(:medium).to_s, :class=> "img-fluid blog") %>
+
+<h1 class='title'>
+  <%= @blog.title %>
+</h1>
+</div>
+</div>
+
+<article class="blog-content">
+
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+
+  <%= raw(@blog.post) %>
+
+
+</div>
+
+</article>
+<p class="name"><strong>written by: </strong>
+  <%= @blog.name %>
+</p>
+<p class="website"><strong> website:</strong>
+  <%= link_to @blog.website, "http://#{@blog.website}", class: "website-form-link" %></p>
+<p class="date">
+  Submitted <%= time_ago_in_words(@blog.created_at) %> ago
+</p><% if current_user %>
+<div>
+
+  <%= link_to 'edit', edit_blog_path(@blog), class: "edit-link" %>
+  <%= link_to 'delete', blog_path(@blog), method: :delete, data:{ confirm: 'are you sure?'}, class: "delete-link" %>
+</div>
+<% else %>
+<%= social_share_button_tag(@blog.title) %>
+</div>
+
+<div id="comments">
+  <h2 class="comments-count"><%= @blog.comments.count %> comments</h2><br>
+
+<%= render @blog.comments %>
+
+<% end %>
+
+<% if current_user %>
+
+<%= render 'comments/form' %>
+
+<% end %>
+
+
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<!-- <div class="container-fluid">
+  <%= render 'layouts/footer_main' %>
+</div> -->

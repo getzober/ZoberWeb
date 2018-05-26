@@ -1,0 +1,39 @@
+
+nav {
+  background-color:#000000;
+
+
+}
+#secondNav {
+  background-color:#000000;
+}
+// .nav-link .js-scroll-trigger {
+//   color: white;
+// }
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+}
+//search bar styling
+#search {border-radius: 15px 15px 15px 15px; font-family:raleway; overflow:hidden;}
+.houses_submit{border-radius: 15px 15px 15px 15px;}
+input {
+  display: inline-block;
+}
+//button and link colors in nav bar//
+.welcome{color:white; font-family: raleway; font-size:16px; margin-top:-7px; margin-right:60px; text-align:center;}
+a{color:white; font-family: raleway; border-radius:5px; margin-top:-7px;}
+a:hover {color:#ffff; border-radius:5px;}
+button .menu .navbar-toggler .navbar-toggler-right{color:white; font-family:raleway;}
+.navbar-light .navbar-toggler {color:white; border-color:white;}
+.navbar-light .navbar-toggler:hover {color:#f47f49; background-color:white;}
+//search btn styling//
+.btn {background-color:white; color:#f47f49; font-family:raleway; border-radius:15px 15px 15px 15px; float:right;}
+.btn:hover{background-color: #c0c0c0; color: #ffffff;}
+.dropdown-menu .providers {color: #f47f49;}
+.dropdown .providers {color: #f47f49;}
+.dropdown-toggle:hover{color:#fff; background-color:#c0c0c0; padding:5px; border-radius:5px;}
+.register{color: #f47f49;}
+.login-dropdown {color: #f47f49;}
+header {margin-bottom: 140px;}
+.about-zober:hover{color:#fff; background-color:#c0c0c0; border-radius:5px;}
+.about-zober2.nav-link.js-scroll-trigger:hover{color:#fff;}

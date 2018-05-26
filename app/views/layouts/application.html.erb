@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zoberv1.1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <%= javascript_pack_tag 'application' %>
+
+    <% flash.each do |key, alert| # iterates through alerts %>
+    <div class='alertplaceholderstyle' id='<%= key %>'>
+      <%= alert %>
+    </div>
+    <% end %>
+    <% unless flash.empty? %>
+         <script type="text/javascript">
+              <% flash.each do |f| %>
+    	      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+    	     	 toastr['<%= type %>']('<%= f[1] %>');
+    	   <% end %>
+         </script>
+    <% end %>
+    <%= yield %>
+    <%= javascript_include_tag 'application' %>
+
+  </body>
+</html>

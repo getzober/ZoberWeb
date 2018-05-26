@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+*= require toastr
+*= require social-share-button
+*= require normalize-rails
+ *= require font-awesome
+ *= require slick
+ *= require slick-theme
+ *= require_tree .
+ *= require_self
+ */
+@import "home_page";
+@import "bootstrap";
+@import "providers";
+@import "header";
+@import "footer_main";
+@import "signup_form";
+//devise form styling//
+body {background-color: #fff;}
+.simple_form.new_provider {
+  margin-top:100px;
+
+}
+.form-inputs{margin-left:30%;}
+.border-form-div {
+  max-width: 600px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 2px 3px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 2px 3px rgba(0,0,0,.05);
+          box-shadow: 0 2px 3px rgba(0,0,0,.05);
+}
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  padding: 9px 7px;
+  margin-top:10px;
+max-width:300px;
+border-radius: 15px;
+}
+.border-form-div-login {
+  max-width: 600px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 3px 3px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 3px 3px rgba(0,0,0,.05);
+          box-shadow: 0 3px 5px rgba(0,0,0,.05);
+}
+.border-form-div-login .form-signin-heading,
+.border-form-div-login .checkbox {
+  margin-bottom: 10px;
+}
+.border-form-div-login input[type="text"],
+.border-form-div-login input[type="email"],
+.border-form-div-login input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  padding: 9px 7px;
+  margin-top:10px;
+max-width:300px;
+border-radius: 15px;
+}
+.border-form-div-login {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 0;
+
+  text-align: center;
+
+  color: black;
+  background: url('sunsetring.jpg') no-repeat bottom center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .5;
+  border-radius: 15px;
+  margin-top:140px;
+  padding-bottom:40px;
+}
+.password.required {width:160px; margin-right:10px; color:black;}
+.string.email.required {width:300px; color:black;}
+.provider_signup{color:#f47f49; font-weight:400; font-size: 4rem; margin-left:30%; font-family:raleway;}
+.string.required {padding-right:40px; max-width:300px; color:black;}
+.string.required#provider_organization{color:black;}
+.email.required#provider_email{color:black;}
+.password.required#provider_password{color:black;}
+.string.required#provider_password{color:black;}
+.string.required#provider_lastname{color:black;}
+.string.required#provider_firstname{color:black;}
+.string.required#provider_occupation{color:black;}
+.password.required#provider_password_confirmation{color:black; margin-bottom:40px;}
+.email {color:black;}
+
+.devise_login {color: black; width: 40%;margin-left: 25%;margin-right: 35%; margin-bottom:40px; font-size:18px;}
+.devise_login:hover{color:black;}
+.devise_registration {color:white; width: 40%;margin-left: 25%;margin-right: 35%}
+.container-fluid.login {margin-top:140px;}
+.string.email.optional {width:300px;}
+.password.optional {width:300px;}
+.input.email.optional.provider_email {width: 40%;margin-left: 25%;}
+.input.password.optional.provider_password{width:40%; margin-left:25%; }
+.input.boolean.optional.provider_remember_me {width:40%; margin-left:25%; }
+.hint{color:#fff;}
+.provider_login{color:black; font-size:4rem; font-weight:400; font-family:raleway; margin-top:80px; text-align:center; margin-right:50px;}
+.btn.btn-lg.login-btn {background-color:black; color:#fff; font-family:raleway; margin-bottom:20px;}
+.devise_forgot {color:black; }
+.email.optional{color:black; }
+.password.optional {color:black; }
+.devise_registration{margin-bottom:20px;}
+.boolean.optional.checkbox {color:white; padding-left:20px;}
+.boolean.optional{margin-right:20px;}
+.password.optional#provider_password{margin-bottom:80px;}
+
+//user sign up css
+.string.required#user_last_name {color:black;}
+.string.required#user_first_name {color:black;}
+.string.email.required#user_email {color:black;}
+.password.required#user_password {color:black;}
+.password.required#user_password_confirmation {color:black;}
+
+h2.provider_signup {text-align:center; padding-right:120px; color:black; }
+//user sign up css
+.user_login{color:black; font-family:raleway; padding-top:40px; font-weight:300px; font-size:4rem;}
+.boolean.optional.checkbox{float:left;}
+.user_submit{width:40%; margin-left:30%; margin-right:30%;}
+.btn.user_submit{color:#ffffff; background-color:#f47f49; margin-bottom:20px;}
+.btn.user_submit:hover{color:#f47f48; background-color:#ffffff;}
+.form-inputs.user{width:40%; margin-left:25%; margin-right:35%;}
+.password.optional{float:left;}

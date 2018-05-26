@@ -1,0 +1,33 @@
+<section>
+  <%= render 'layouts/header' %>
+</section>
+<section>
+  <div class="container-fluid signup">
+    <div class="border-form-div-login">
+
+
+<%= simple_form_for(resource, as: :user, url: registration_path(:user)) do |f| %>
+<h2 class='provider_signup'>sign up</h2><br>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name, required: true, autofocus:true, class: 'signup_input' %><br>
+    <%= f.input :last_name, required: true, autofocus:true,class: 'signup_input' %><br>
+    <%= f.input :username, required: true, autofocus:true,class: 'signup_input' %><br>
+    <%= f.input :email, required: true, autofocus: true, class: 'signup_input' %>
+    <%= f.input :password, required: true, class: 'signup_input', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true, class: 'signup_input' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class:"user_submit" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+</div>
+</section>
+<section>
+  <%= render 'layouts/footer_main' %>
+</section>

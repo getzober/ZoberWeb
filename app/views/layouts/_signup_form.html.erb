@@ -1,0 +1,39 @@
+<!-- basic layout for signup form for sign up page -->
+<div class="mainContent">
+  <div class="container-fluid user_signup">
+    <h1 class="largeHeader">Sign up</h1>
+    <p class="centeredDescription col_4">signed up? you can <button class='login_button btn btn-sm btn-light'>log in here.</button></p>
+    <div class="col_1">
+      <form class="signupForm">
+
+        <label for="name">user name</label><br>
+        <input class="shortInput" id="name" type="text"><br>
+
+        <label for="email">email</label><br>
+        <input class="shortInput" id="email" type="text"><br>
+
+        <label for="password">password</label><br>
+        <input class="shortInput" id="password" type="text"><br>
+
+        <label for="confirmPassword">confirm password</label><br>
+        <input class="shortInput" id="confirmPassword" type="text"><br>
+
+      </form>
+
+    </div><!-- end column 2 contact form -->
+
+    <div class="col_2">
+      <div class='row-fluid'>
+      <h4 class='profile'>upload profile picture</h4>
+      <div class="placeholderPic"></div>
+      <button href="" class="url btn btn-sm btn-light">choose photo from url</button>
+      <button href="" class="computer btn btn-sm btn-light">upload a photo</button>
+    </div><!-- end 2 column upload profile pic -->
+</div>
+    <div class="col_4">
+      <button href="" class="createAccount btn-sm">create account</button>
+    </div>
+
+  </div><!-- end grid -->
+</div><!-- end mainContent -->
+<%= render 'layouts/modal' %>

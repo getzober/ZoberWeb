@@ -1,0 +1,92 @@
+<div class='container-fluid'><%= render 'layouts/header' %>
+</div>
+<% provide(:title, 'about') %>
+
+<section>
+
+  <div class='container-fluid about'>
+    <div class="btn">
+  <%= link_to 'company', company_path, :class => "btn about" %>
+</div>
+<div class="btn">
+  <%= link_to 'staff', about_path, :class => "btn about"%>
+</div>
+
+<h1 class="about-title">about us!</h1>
+
+</div>
+
+<div class="container-fluid staff">
+  <h2 class="about-staff">shipmates</h2>
+  <div class="card-group">
+      <div class="col-sm-4 staff">
+  <div class="card text-center about">
+  <div class="img-responsive">
+    <%=image_tag("alex.png", alt: "tyler", class: "rounded-circle")%>
+  </div>
+  <div class="card-block about">
+    <h4 class="card-title about">Alexandra Tooley</h4>
+    <p class="card-text">Sandra is our new kick ass developer that originally hails for Down Under.   She has more than 12 years experience doing everything from social work to writing super fly code. When she’s not clackin’ the keys, she’s kicking more ass and taking names at her boxing gym, snapping photos, and raising a prodigy violinist. We are super excited to have Sandra as shipmate #2! </p>
+</div>
+  </div>
+  </div>
+
+  <div class="col-sm-4">
+
+<div class="card text-center about">
+<div class="img-responsive">
+
+</div>
+<div class="card-block about">
+  <h4 class="card-title about">Tyler Stratton</h4>
+  <p class="card-text">Tyler Stratton is the founder and CEO at zober. As the captain, he steers the company’s vision by overseeing all strategy, outreach, and development to ensure the optimal experience for both consumers and professionals searching for unique ways to tackle recovery. Having attended treatment 18 times, Tyler has a visceral understanding of the deficiencies in the field and is passionate about ethics, accountability, and REAL information. As an extremist, Tyler has been both a total f*ck up and a successful VP of a tech startup; he has also started three previous companies. Tyler is obsessed with color-coded calendars, coffee, real estate, cars, dogs, family, and most of all, saving lives. </p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+<div class="card-group">
+    <div class="col-sm-4">
+<div class="card text-center about">
+<div class="img-responsive">
+
+</div>
+<div class="card-block about">
+  <h4 class="card-title about">Marci Fey</h4>
+  <p class="card-text">Marci is a web developer in San Francisco with 10+ years of healthcare operations experience and a strong desire to make a difference. Originally from Ohio, Marci graduated Magna Cum Laude from Kent State University with a bachelor's degree in Healthcare Administration. Last year, Marci became a developer in an effort to fix broken systems and help save lives. During her free time, she enjoys going to concerts, eating takeout, and binging good tv.</p>
+</div>
+</div>
+</div>
+  <div class="col-sm-4">
+<div class="card text-center about">
+<div class="img-responsive">
+
+</div>
+<div class="card-block about">
+  <h4 class="card-title about">John D'Andre</h4>
+  <p class="card-text">Jon D’Andre has been in the marketing, sales, and consulting industry for over 5 years. Jon studied business and communications at San Francisco State University before going on to pursue his career in marketing/sales/consulting. Besides being a jack of all trades within his industry, Jon loves to read, play sports, travel the world, and dabble in stocks & crypto currencies. During his free time he is always thinking of new ways to make the world a better place through business, finance, and philanthropy.</p>
+</div>
+</div>
+</div>
+
+
+<div class="card-group">
+  <div class="col-sm-4">
+<div class="card text-center about">
+<div class="img-responsive">
+  <%=image_tag("adeel.jpg", alt: "home", class: "rounded-circle")%>
+</div>
+<div class="card-block about">
+  <h4 class="card-title about">Adeel Pervez</h4>
+  <p class="card-text">Adeel Pervez is currently studying Media Studies at the University of California at Berkeley and plans on pursuing a career in real estate. When not working as the Bo'sun to help zober grow, he enjoys running, reading the news, playing the guitar, and spending time with his family. He is always excited to learn new things and willing to take on new challenges.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<%= render 'layouts/footer_main'%>
