@@ -60,7 +60,13 @@ GEM
     bcrypt (3.1.11-x86-mingw32)
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootstrap (4.0.0.beta2.1)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.3, < 2)
@@ -86,6 +92,7 @@ GEM
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -96,18 +103,27 @@ GEM
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
     crass (1.0.3)
+    database_cleaner (1.7.0)
+    debug_inspector (0.0.3)
     devise (4.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
+    docile (1.3.1)
     dotenv (2.2.1)
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
+    factory_bot (4.10.0)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.10.0)
+      factory_bot (~> 4.10.0)
+      railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
@@ -131,6 +147,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-slick-rails (1.8.1)
       railties (>= 3.1)
+    json (2.1.0)
     jwt (1.5.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -180,6 +197,11 @@ GEM
     pg (0.21.0)
     pg (0.21.0-x86-mingw32)
     popper_js (1.12.9)
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     public_suffix (3.0.1)
     puma (3.11.0)
     pundit (1.1.0)
@@ -227,6 +249,23 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     role_model (0.8.2)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.3)
@@ -245,13 +284,22 @@ GEM
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.0.0)
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     social-share-button (1.1.0)
       coffee-rails
     spring (2.0.2)
       activesupport (>= 4.2)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -302,6 +350,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
+  better_errors
+  binding_of_caller
   bootstrap (~> 4.0.0.alpha6)
   bootstrap-sass (~> 3.2.0)
   bootstrap_form
@@ -310,8 +360,10 @@ DEPENDENCIES
   carrierwave
   ckeditor!
   coffee-rails (~> 4.2)
+  database_cleaner
   devise
   dotenv-rails
+  factory_bot_rails
   figaro
   font-awesome-rails
   geocoder (~> 1.4)
@@ -323,6 +375,7 @@ DEPENDENCIES
   normalize-rails
   omniauth-google-oauth2 (~> 0.2.1)
   pg
+  pry-rails
   puma (~> 3.7)
   pundit
   rails (~> 5.1.4)
@@ -330,12 +383,16 @@ DEPENDENCIES
   react-rails
   responders (~> 2.4)
   role_model (~> 0.8.2)
+  rspec-rails
   sass-rails (~> 5.0)
   scrollreveal-rails
   selenium-webdriver
+  shoulda-matchers
   simple_form (~> 3.2)
+  simplecov
   social-share-button
   spring
+  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   stripe
   toastr-rails
