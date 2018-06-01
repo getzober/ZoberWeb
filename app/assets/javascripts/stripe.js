@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
+  Stripe($('meta[name="stripe-key"]').attr('content'));
 });
