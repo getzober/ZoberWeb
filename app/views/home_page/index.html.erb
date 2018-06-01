@@ -1,120 +1,21 @@
-<!DOCTYPE html>
-<head>
-  <title>Full Screen Landing Page</title>
-
-    <% if current_user %>
-      <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
-    <% else %>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
-      <link rel='stylesheet' type='text/css' href='homepage_footer.scss'>
-      <link rel='stylesheet' type='text/css' href='home_page.scss'>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-      <script src="jquery-3.2.1.min.js"></script>
-      <script src="https://use.fontawesome.com/9a42685ed3.js"></script>
-    <% end %>
-
-
-</head>
-<body class="main_page">
 <% if current_user %>
-
   <%= render 'user_profile' %>
-
 <% else %>
-
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-  <div class="container-fluid">
-    <a class="navbar-brand js-scroll-trigger navbar-left" href="houses">
-      <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <!-- <li class="dropdown providers">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">providers <span class="caret"></span></a>
-                 <ul class="dropdown-menu providers">
-                 <% if provider_signed_in? %>
-                  <li class="link_items"><%= link_to "logout", destroy_provider_session_path, method: :delete, class: "link_items" %></li>
-<li ><%= link_to "dashboard", index_path, class: "link_items" %></li>
-                 <% else %>
-                  <li class="link_items"><%= link_to "register", new_provider_registration_path, class: "link_items" %></li>
-                  <li class="link_items"><%= link_to "login", new_provider_session_path, class: "link_items" %></li>
-
-                 <% end %>
-
-                 </ul>
-               </li> -->
-        <li class="nav-item">
-          <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">about</a>
-        </li>
-        <li class="nav-item">
-          <a class=" about nav-link js-scroll-trigger" href="blogs" style="color:white; font-family:raleway">read</a>
-        </li>
-        <!-- commenting these out just for now
-        <li class="nav-item">
-          <a class=" social nav-link js-scroll-trigger" href="social" style="color:white; font-family:raleway">social</a>
-        </li> -->
-        <!-- <li class="dropdown users">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">users <span class="caret"></span></a>
-                 <ul class="dropdown-menu providers">
-                 <% if user_signed_in? %>
-                  <li class="link_items"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "link_items" %></li>
-<li ><%= link_to "dashboard", index_path, class: "link_items" %></li>
-                 <% else %>
-                  <li class="link_items"><%= link_to "register", new_user_registration_path, class: "link_items" %></li>
-                  <li class="link_items"><%= link_to "login", new_user_session_path, class: "link_items" %></li>
-
-                 <% end %>
-
-                 </ul>
-               </li> -->
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="masthead">
-  <div class="intro-body">
-    <div class="row-fluid image">
-      <div class="img-fluid mx-auto" id="lifebuoy">
-
-        <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
-
-        <div class="col-md-10 mx-auto">
-
-          <div class="row-fluid">
-            <%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], id: "search_term", name:"user_location", placeholder: "find sober living by city, state, or zip", class: "search_field" %>
-            <%= submit_tag "Search", class: 'house_submit' %>
+  <header class="container-fluid masthead">
+    <div class="intro-body">
+      <div class="row image">
+        <div class="img-fluid mx-auto" id="lifebuoy">
+          <%=image_tag("logolarge.png", alt: "logo", class: "img-fluid logo_large")%>
+          <div class="col-md-10 mx-auto">
+            <div class="row-fluid">
+              <%= form_tag(houses_path, method: "get", id: "search-form") do %>
+              <%= text_field_tag :search, params[:search], id: "search_term", name:"user_location", placeholder: "find sober living by city, state, or zip", class: "search_field" %>
+              <%= submit_tag "Search", class: 'house_submit' %>
+            </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
     </div>
-  </div>
-</header>
-
+  </header>
 <% end %>
-
-</body>
-
-</html>
-
-<script>
-  function activatePlacesSearch(){
-    var input = document.getElementById('search_term');
-    var options = {
-      types: ['geocode'],
-      componentRestrictions: {country: 'us'}
-    };
-    var autocomplete = new google.maps.places.Autocomplete(input, options);
-  }
-</script>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= + <%=ENV['GOOGLE_MAP_API_KEY']%> + &libraries=places&callback=activatePlacesSearch"></script>
