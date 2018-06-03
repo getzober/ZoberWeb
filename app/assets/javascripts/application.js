@@ -18,7 +18,6 @@
 //= require rails-ujs
 //= require jquery3
 //= require popper
-//= require bootstrap-sprockets
 //= require jquery.slick
 //= require ckeditor/init
 //= require react
@@ -26,6 +25,7 @@
 //= require components
 //= require_tree .
 //= require scrollReveal
+//= require bootstrap-sprockets
 
 $(function() {
   window.scrollReveal = new scrollReveal();
