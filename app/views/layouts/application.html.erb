@@ -122,20 +122,31 @@
 
     <%= javascript_include_tag 'application' %>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.secrets[:google_map_api_key] %>&libraries=places&callback=activatePlacesSearch"></script>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
 
+      // function activatePlacesSearch(){
+      //   var input = document.getElementById('search_term');
+      //   var options = {
+      //     types: ['geocode'],
+      //     componentRestrictions: {country: 'us'}
+      //   };
+      //   debugger;
+      //   var autocomplete = new google.maps.places.Autocomplete(input, options);
+      // }
+    </script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj9KTqj4NqvXNkTYbX_IjIRa0q3zIvJDg&libraries=places&callback=initMap">
+    </script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBdJ7s2-6oSuOaXzge372TKp_axqLZrnM&libraries=places&callback=initMap"></script> -->
     <%= javascript_pack_tag 'application' %>
 
-    <script>
-      function activatePlacesSearch(){
-        var input = document.getElementById('search_term');
-        var options = {
-          types: ['geocode'],
-          componentRestrictions: {country: 'us'}
-        };
-        var autocomplete = new google.maps.places.Autocomplete(input, options);
-      }
-    </script>
   </body>
 </html>

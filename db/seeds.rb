@@ -1,20 +1,31 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-monthly = Product.create(title: "monthly plan",
-subtitle: "monthly advertising subscription to zober", image_name: "tinylogo.png", price: "$29.99",
-sku: "monthly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober</p>
-  });
-yearly = Product.create(title: "yearly plan",
-  subtitle: "yearly advertising subscription to zober", image_name: "tinylogo.png", price: "$365.00",
-  sku: "yearly", download_url: "", description: %{<p>you now have the ability to advertise your home through zober. this is valid for one year. </p>
-    });
-Topic.create!(name: "spirituality");
-Topic.create!(name: "fitness");
+
+monthly = Product.create(
+  title: "monthly plan",
+  subtitle: "monthly advertising subscription to zober",
+  image_name: "tinylogo.png",
+  price: '29.99'.to_f,
+  sku: "monthly",
+  download_url: "",
+  description: "You now have the ability to advertise your home through zober."
+)
+yearly = Product.create(
+  title: "yearly plan",
+  subtitle: "yearly advertising subscription to zober",
+  image_name: "tinylogo.png",
+  price: '365'.to_f,
+  sku: "yearly",
+  download_url: "",
+  description: "You now have the ability to advertise your home through zober. This is valid for one year."
+)
+
+topic_names = ['spirituality', 'fitness']
+topic_names.each do |name|
+  Topic.create(name: name)
+end
+
 Admin.create!(email:"tyler@zober.co", password:"Zober2018");
 # image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
 

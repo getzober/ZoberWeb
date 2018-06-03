@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
-
     state: {
       facilities: [],
       femaleFilter: false,
@@ -86,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       facilities: state => {
         return state.facilities
-      }  
+      }
     },
 
     actions: {
@@ -94,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let uri = window.location.search.substring(1);
         let params = new URLSearchParams(uri);
         let userLocation = params.get("user_location") || "San Francisco";
-        
+
         axios.get('/api/v1/houses/' + userLocation + '.json').then((response) => {
           commit('setHousesList', { list: response.data })
         }, (err) => {
@@ -181,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       updateVapingFilter (state, vapingFilter) {
         state.vapingFilter = vapingFilter
       },
-
     }
 
   })
@@ -208,12 +206,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
           details.lat = homes[i].latitude;
           details.lng = homes[i].longitude;
           details.imageUrl = homes[i].images[0].image;
-          details.id = homes[i].id; 
-          details.price = homes[i].price; 
+          details.id = homes[i].id;
+          details.price = homes[i].price;
           details.description = homes[i].name;
           locations.push(details);
         }
-        return locations; 
+        return locations;
         console.log(locations)
       }
     }
@@ -337,14 +335,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         return isValid;
     },
 
-      setSortAttribute: function(inputAttribute) {
-        if(inputAttribute !== this.sortAttribute) {
-          this.sortAscending = true;
-        } else {
-          this.sortAscending = !this.sortAscending;
-        }
-        this.sortAttribute = inputAttribute;
-       },
+    setSortAttribute: function(inputAttribute) {
+      if(inputAttribute !== this.sortAttribute) {
+        this.sortAscending = true;
+      } else {
+        this.sortAscending = !this.sortAscending;
+      }
+      this.sortAttribute = inputAttribute;
+     },
 
       formatPrice: function(value) {
         let val = (value/1).toFixed(2)
@@ -353,145 +351,144 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
 
     computed: {
-
       femaleFilter:{
-        get() { 
-          return this.$store.getters.femaleFilter; 
+        get() {
+          return this.$store.getters.femaleFilter;
         },
-        set( femaleFilter ) { 
+        set( femaleFilter ) {
           this.$store.commit("updateFemaleFilter", femaleFilter);
         }
       },
 
       maleFilter:{
-        get() { 
-          return this.$store.getters.maleFilter; 
+        get() {
+          return this.$store.getters.maleFilter;
         },
-        set( maleFilter ) { 
+        set( maleFilter ) {
           this.$store.commit("updateMaleFilter", maleFilter);
         }
       },
 
       coedFilter:{
-        get() { 
-          return this.$store.getters.coedFilter; 
+        get() {
+          return this.$store.getters.coedFilter;
         },
-        set( coedFilter ) { 
+        set( coedFilter ) {
           this.$store.commit("updateCoedFilter", coedFilter);
         }
       },
 
       parkingFilter:{
-        get() { 
-          return this.$store.getters.parkingFilter; 
+        get() {
+          return this.$store.getters.parkingFilter;
         },
-        set( parkingFilter ) { 
+        set( parkingFilter ) {
           this.$store.commit("updateParkingFilter", parkingFilter);
         }
       },
 
       internetFilter:{
-        get() { 
-          return this.$store.getters.internetFilter; 
+        get() {
+          return this.$store.getters.internetFilter;
         },
-        set( internetFilter ) { 
+        set( internetFilter ) {
           this.$store.commit("updateInternetFilter", internetFilter);
         }
       },
 
       poolFilter:{
-        get() { 
-          return this.$store.getters.poolFilter; 
+        get() {
+          return this.$store.getters.poolFilter;
         },
-        set( poolFilter ) { 
+        set( poolFilter ) {
           this.$store.commit("updatePoolFilter", poolFilter);
         }
       },
 
       adultFilter:{
-        get() { 
-          return this.$store.getters.adultFilter; 
+        get() {
+          return this.$store.getters.adultFilter;
         },
-        set( adultFilter ) { 
+        set( adultFilter ) {
           this.$store.commit("updateAdultFilter", adultFilter);
         }
       },
 
       youthFilter:{
-        get() { 
-          return this.$store.getters.youthFilter; 
+        get() {
+          return this.$store.getters.youthFilter;
         },
-        set( youthFilter ) { 
+        set( youthFilter ) {
           this.$store.commit("updateYouthFilter", youthFilter);
         }
       },
 
       seniorFilter:{
-        get() { 
-          return this.$store.getters.seniorFilter; 
+        get() {
+          return this.$store.getters.seniorFilter;
         },
-        set( seniorFilter ) { 
+        set( seniorFilter ) {
           this.$store.commit("updateSeniorFilter", seniorFilter);
         }
       },
 
       hottubFilter:{
-        get() { 
-          return this.$store.getters.hottubFilter; 
+        get() {
+          return this.$store.getters.hottubFilter;
         },
-        set( hottubFilter ) { 
+        set( hottubFilter ) {
           this.$store.commit("updateHottubFilter", hottubFilter);
         }
       },
 
       laundryFilter:{
-        get() { 
-          return this.$store.getters.laundryFilter; 
+        get() {
+          return this.$store.getters.laundryFilter;
         },
-        set( laundryFilter ) { 
+        set( laundryFilter ) {
           this.$store.commit("updateLaundryFilter", laundryFilter);
         }
       },
 
       dogsFilter:{
-        get() { 
-          return this.$store.getters.dogsFilter; 
+        get() {
+          return this.$store.getters.dogsFilter;
         },
-        set( dogsFilter ) { 
+        set( dogsFilter ) {
           this.$store.commit("updateDogFilter", dogsFilter);
         }
       },
 
       catsFilter:{
-        get() { 
-          return this.$store.getters.catsFilter; 
+        get() {
+          return this.$store.getters.catsFilter;
         },
-        set( catsFilter ) { 
+        set( catsFilter ) {
           this.$store.commit("updateCatsFilter", catsFilter);
         }
       },
 
       smokingFilter:{
-        get() { 
-          return this.$store.getters.smokingFilter; 
+        get() {
+          return this.$store.getters.smokingFilter;
         },
-        set( smokingFilter ) { 
+        set( smokingFilter ) {
           this.$store.commit("updateSmokingFilter", smokingFilter);
         }
       },
 
       vapingFilter:{
-        get() { 
-          return this.$store.getters.vapingFilter; 
+        get() {
+          return this.$store.getters.vapingFilter;
         },
-        set( vapingFilter ) { 
+        set( vapingFilter ) {
           this.$store.commit("updateFilter", vapingFilter);
         }
       },
 
       modifiedHouses: function() {
         return this.$store.getters.facilities;
-        
+
         // return this.houses.sort(function(house1, house2) {
         //   if (this.sortAscending) {
         //     return house1[this.sortAttribute].localeCompare(house2[this.sortAttribute]);
@@ -580,7 +577,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
   })
 // END: map display & define markers
-
 
 });
 
