@@ -24,8 +24,7 @@ gem "scrollreveal-rails"
 gem 'vuejs-rails'
 # Integrates Slick carousel, a jQuery plugin, into your Rails app.
 gem "jquery-slick-rails"
-# A simple asset-pipeline wrapper for React
-gem 'react-rails'
+# Use Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

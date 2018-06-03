@@ -12,18 +12,15 @@
 //
 
 //= require vue
-//= require vue-router 
-//= require vue-resource 
-//= require vuex 
+//= require vue-router
+//= require vue-resource
+//= require vuex
 //= require rails-ujs
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 //= require jquery.slick
 //= require ckeditor/init
-//= require react
-//= require react_ujs
-//= require components
 //= require_tree .
 //= require scrollReveal
 
