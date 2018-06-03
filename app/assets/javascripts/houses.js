@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       },
       selectedFilters: state => {
         return state.selectedFilters
-      }  
+      }
     },
 
     actions: {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         let uri = window.location.search.substring(1);
         let params = new URLSearchParams(uri);
         let userLocation = params.get("user_location") || "San Francisco";
-        
+
         axios.get('/api/v1/houses/' + userLocation + '.json').then((response) => {
           commit('setHousesList', { list: response.data })
         }, (err) => {
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         for(var i = 0; i < homes.length; i++) {
 
           if(selectedFilters.length >= 1) {
-            
+
             var filterArray = homes[i].filters.map(function (filter) {
               return filter.filter;
             });
@@ -81,26 +81,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
               details.lat = homes[i].latitude;
               details.lng = homes[i].longitude;
               details.imageUrl = homes[i].images[0].image;
-              details.id = homes[i].id; 
-              details.price = homes[i].price; 
+              details.id = homes[i].id;
+              details.price = homes[i].price;
               details.description = homes[i].name;
               locations.push(details);
             }
-          
+
           } else {
             var details = {};
             details.title = homes[i].property_description;
             details.lat = homes[i].latitude;
             details.lng = homes[i].longitude;
             details.imageUrl = homes[i].images[0].image;
-            details.id = homes[i].id; 
-            details.price = homes[i].price; 
+            details.id = homes[i].id;
+            details.price = homes[i].price;
             details.description = homes[i].name;
             locations.push(details);
           }
         }
 
-      return locations; 
+      return locations;
     }
   }
 })
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             });
             return selectedFilters.every(elem => filterArray.indexOf(elem) > -1)
           } else {
-            return true; 
+            return true;
           }
       },
 

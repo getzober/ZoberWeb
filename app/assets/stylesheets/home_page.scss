@@ -3,28 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Oswald');
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%
 }
+
 .intro {
   height: 100%;
   width: 100%;
   margin: 0;
-
 }
+
 //nav bar styling//
 // .tinylogo {margin-right: 100px;}
 .navbar-light .navbar-toggler {
-    color: #ffffff;
-    border-color: #ffffff;
+  color: #ffffff;
+  border-color: #ffffff;
 }
+
 .navbar {
-   background-color: transparent;
-   background: transparent;
-   border-color: transparent;
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
 }
 .nav-item {color:white;}
 
@@ -108,7 +111,7 @@ html, body {
   text-align:center;
   margin:none;
 }
-.main_page {overflow-y: hidden;}
+// .main_page {overflow-y: hidden;}
 
 //modal styling//
 // .login_modal_footer{margin-top:5px; back-ground-color: #f47f49;}
