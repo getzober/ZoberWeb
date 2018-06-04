@@ -13,7 +13,7 @@
     <%= tag :meta, name: "stripe-key", content: Rails.application.secrets[:stripe_publishable_key] %>
     <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 
-    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag  'application', media: 'all' %>
     <%= csrf_meta_tags %>
   </head>
 
