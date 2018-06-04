@@ -10,6 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
+//= require vue
+//= require vue-router
+//= require vue-resource
+//= require vuex
+//= require rails-ujs
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
@@ -19,13 +24,6 @@
 //= require scrollReveal
 //= require ckeditor/init
 
-//= require vue
-//= require vue-router
-//= require vue-resource
-//= require vuex
-//= require react
-//= require react_ujs
-//= require components
 //= require_tree .
 
 (function () {
