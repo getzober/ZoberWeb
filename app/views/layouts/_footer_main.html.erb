@@ -1,38 +1,49 @@
-<% content_for :head do %>
-     <!-- <link rel="stylesheet" href="/assets/footer_main.scss"> -->
-     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-     <% end %>
 <footer class="footer_main">
-    <div class="container-fluid">
-  <div class="footer-social">
-          <a href="https://www.facebook.com/getzober/" class="social-icons"><i class="fa fa-facebook fa-2x"></i></a>
-          <a href="https://instagram.com/getzober" class="social-icons"><i class="fa fa-instagram fa-2x"></i></a>
-          <a href="https://twitter.com/getzober" class="social-icons"><i class="fa fa-twitter fa-2x"></i></a>
-      </div>
-<div class='row-fluid'>
-     <li class='links_footer'><%= link_to "about",   about_path, class: "footer_link" %></li>
-     <li class='links_footer'><%= link_to "contact", contact_path, class: "footer_link" %></li>
-     <li class='links_footer'><%= link_to "privacy", privacy_path, class: "footer_link" %></li>
-      <li class='links_footer'><%= link_to "terms", terms_path, class: "footer_link" %></li>
+  <div class="container-fluid">
+    <div class="footer-social">
+      <a href="https://www.facebook.com/getzober/" class="social-icons">
+        <i class="fab fa-facebook fa-2x mr-2"></i>
+      </a>
+      <a href="https://instagram.com/getzober" class="social-icons">
+        <i class="fab fa-instagram fa-2x mr-2"></i>
+      </a>
+      <a href="https://twitter.com/getzober" class="social-icons">
+        <i class="fab fa-twitter fa-2x"></i>
+      </a>
+    </div>
 
-   </div>
+    <div class='row-fluid'>
+      <li class='links_footer'>
+        <%= link_to "about", about_path, class: "footer_link" %>
+      </li>
+      <li class='links_footer'>
+        <%= link_to "contact", contact_path, class: "footer_link" %>
+      </li>
+      <li class='links_footer'>
+        <%= link_to "privacy", privacy_path, class: "footer_link" %>
+      </li>
+      <li class='links_footer'>
+        <%= link_to "terms", terms_path, class: "footer_link" %>
+      </li>
+    </div>
 
-
-      <p class="copyright">copyright &copy; zober 2017</p>
-
+    <p class="copyright">copyright &copy; zober 2017</p>
   </div>
+
   <div class='row-fluid admin'>
     <li class="links_footer">
-
-             <% if admin_signed_in? %>
-             <!-- <li><%= link_to "dashboard", index_path, class: "link_items" %></li> -->
-              <li class="links_footer"><%= link_to "logout", destroy_admin_session_path, method: :delete, class: "links_footer" %></li>
-             <% else %>
-
-              <li class="links_footer"><%= link_to "admin", new_admin_session_path, class: "links_footer" %></li>
-             <% end %>
-
-
-           </li>
-         </div>
-  </footer>
+      <% if admin_signed_in? %>
+        <!-- <li>
+          <%#= link_to "dashboard", index_path, class: "link_items" %>
+        </li> -->
+        <li class="links_footer">
+          <%= link_to "logout", destroy_admin_session_path, method: :delete, class: "links_footer" %>
+        </li>
+       <% else %>
+        <li class="links_footer">
+          <%= link_to "admin", new_admin_session_path, class: "links_footer" %>
+        </li>
+      <% end %>
+    </li>
+  </div>
+</footer>

@@ -1,21 +1,20 @@
 require 'csv'
 
-namespace :import do 
+namespace :import do
   desc "Import data from csv"
-  task categories: :environment do 
+  task categories: :environment do
     filename = File.join Rails.root, "categories.csv"
     CSV.foreach(filename, headers: true) do |row|
       Category.create({
     category: row[0]
       })
     end
-  end 
-end 
+  end
+end
 
-
-namespace :import do 
+namespace :import do
   desc "Import data from csv"
-  task filters: :environment do 
+  task filters: :environment do
     filename = File.join Rails.root, "filters.csv"
     CSV.foreach(filename, headers: true) do |row|
       Filter.create({
@@ -23,12 +22,12 @@ namespace :import do
     filter: row[1]
       })
     end
-  end 
-end 
+  end
+end
 
-namespace :import do 
+namespace :import do
   desc "Import data from csv"
-  task sf: :environment do 
+  task sf: :environment do
     filename = File.join Rails.root, "sf_samhsa.csv"
     CSV.foreach(filename, headers: true) do |row|
       House.create({
@@ -54,5 +53,5 @@ namespace :import do
     overnight_passes: "NA"
       })
     end
-  end 
-end 
+  end
+end

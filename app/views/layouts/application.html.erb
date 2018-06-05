@@ -2,30 +2,151 @@
 <html>
   <head>
     <title>Zoberv1.1</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%= tag :meta, name: "stripe-key", content: Rails.application.secrets[:stripe_publishable_key] %>
+    <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
-  <body>
-    <%= javascript_pack_tag 'application' %>
 
-    <% flash.each do |key, alert| # iterates through alerts %>
-    <div class='alertplaceholderstyle' id='<%= key %>'>
-      <%= alert %>
-    </div>
+  <%# Giving the body tag classes with names corresponding to the current
+  controller and action allows the implementation of page-specific CSS and JS %>
+  <body class="<%= "#{controller_name}-controller #{action_name}-action" %>">
+    <!-- iterates through alerts -->
+    <% flash.each do |key, alert| %>
+      <div class='alertplaceholderstyle' id='<%= key %>'>
+        <%= alert %>
+      </div>
     <% end %>
+
     <% unless flash.empty? %>
-         <script type="text/javascript">
-              <% flash.each do |f| %>
-    	      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-    	     	 toastr['<%= type %>']('<%= f[1] %>');
-    	   <% end %>
-         </script>
+      <script type="text/javascript">
+        <% flash.each do |f| %>
+          <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+          toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+      </script>
     <% end %>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger navbar-left" href="houses">
+          <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <!-- <li class="dropdown providers">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">providers <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu providers">
+                <%# if provider_signed_in? %>
+                  <li class="link_items">
+                    <%#= link_to "logout", destroy_provider_session_path, method: :delete, class: "link_items" %>
+                  </li>
+                  <li>
+                    <%#= link_to "dashboard", index_path, class: "link_items" %>
+                  </li>
+                <%# else %>
+                  <li class="link_items">
+                    <%#= link_to "register", new_provider_registration_path, class: "link_items" %>
+                  </li>
+                  <li class="link_items">
+                    <%#= link_to "login", new_provider_session_path, class: "link_items" %>
+                  </li>
+                <%# end %>
+              </ul>
+            </li> -->
+
+            <li class="nav-item">
+              <a class=" about nav-link js-scroll-trigger" href="about" style="color:white; font-family:raleway">
+                about
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class=" about nav-link js-scroll-trigger" href="blogs" style="color:white; font-family:raleway">
+                read
+              </a>
+            </li>
+
+            <!-- commenting these out just for now -->
+            <!-- <li class="nav-item">
+              <a class=" social nav-link js-scroll-trigger" href="social"
+               style="color:white; font-family:raleway">
+                social
+              </a>
+            </li>
+            <li class="dropdown users">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+               role="button" aria-haspopup="true" aria-expanded="false">
+               users <span class="caret"></span>
+              </a>
+
+              <ul class="dropdown-menu providers">
+                <%# if user_signed_in? %>
+                  <li class="link_items">
+                    <%#= link_to "logout", destroy_user_session_path, method: :delete,
+                     class: "link_items" %>
+                  </li>
+                  <li >
+                    <%#= link_to "dashboard", index_path, class: "link_items" %>
+                  </li>
+                <%# else %>
+                  <li class="link_items">
+                    <%#= link_to "register", new_user_registration_path, class: "link_items" %>
+                  </li>
+                  <li class="link_items">
+                    <%#= link_to "login", new_user_session_path, class: "link_items" %>
+                  </li>
+                <%# end %>
+              </ul>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
+
     <%= javascript_include_tag 'application' %>
+
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+
+      // function activatePlacesSearch(){
+      //   var input = document.getElementById('search_term');
+      //   var options = {
+      //     types: ['geocode'],
+      //     componentRestrictions: {country: 'us'}
+      //   };
+      //   debugger;
+      //   var autocomplete = new google.maps.places.Autocomplete(input, options);
+      // }
+    </script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCj9KTqj4NqvXNkTYbX_IjIRa0q3zIvJDg&libraries=places&callback=initMap">
+    </script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBdJ7s2-6oSuOaXzge372TKp_axqLZrnM&libraries=places&callback=initMap"></script> -->
+    <%= javascript_pack_tag 'application' %>
 
   </body>
 </html>

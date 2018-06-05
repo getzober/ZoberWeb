@@ -1,57 +1,59 @@
 <section>
   <%= render "layouts/header" %>
   <menu>
-      <ul class="nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Price</a>
-          <div class="dropdown-menu">
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> No Cost/Income Based </label>
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label>
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Between $500 - $800/month</label>
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Above $800/month</label>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Distance</a>
-          <div class="dropdown-menu">
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 15 miles </label>
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 25 miles</label>
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 50 miles</label>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filters</a>
-          <div class="dropdown-menu">
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="femaleFilter"> Women Only </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="maleFilter"> Men Only </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="coedFilter"> Coed </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="smokingFilter"> Smoking Allowed </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="vapingFilter"> Vaping Allowed </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="catsFilter" > Cats allowed </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="dogsFilter" > Dogs allowed </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="parkingFilter"> Parking </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="internetFilter"> Internet </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model="poolFilter"> Pool </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model=adultFilter> Adult (18+) </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model=youthFilter> Youth </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model=seniorFilter> Senior (65+) </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model=hottubFilter> Hot Tub </label>
-            <label class="dropdown-item radio-inline"><input type="checkbox" v-model=laundryFilter> Laundry Onsite </label>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Sort </a>
-          <div class="dropdown-menu">
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')"> Price/Month </label>
-            <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('deposit')"> Deposit Amount </label>
-          </div>
-        </li>
-      </ul>
+    <ul class="nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Price</a>
+        <div class="dropdown-menu">
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> No Cost/Income Based </label>
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Below $500/month</label>
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Between $500 - $800/month</label>
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> Above $800/month</label>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Distance</a>
+        <div class="dropdown-menu">
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 15 miles </label>
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 25 miles</label>
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio"> 50 miles</label>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Filters</a>
+        <div class="dropdown-menu">
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="femaleFilter"> Women Only </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="maleFilter"> Men Only </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="coedFilter"> Coed </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="smokingFilter"> Smoking Allowed </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="vapingFilter"> Vaping Allowed </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="catsFilter" > Cats allowed </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="dogsFilter" > Dogs allowed </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="parkingFilter"> Parking </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="internetFilter"> Internet </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model="poolFilter"> Pool </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model=adultFilter> Adult (18+) </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model=youthFilter> Youth </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model=seniorFilter> Senior (65+) </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model=hottubFilter> Hot Tub </label>
+          <label class="dropdown-item radio-inline"><input type="checkbox" v-model=laundryFilter> Laundry Onsite </label>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> Sort </a>
+        <div class="dropdown-menu">
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('price')"> Price/Month </label>
+          <label class="dropdown-item radio-inline"><input type="radio" name="optradio" v-on:click="setSortAttribute('deposit')"> Deposit Amount </label>
+        </div>
+      </li>
+    </ul>
   </menu>
 </section>
 
-
-<body class='houses_list'>
+<section class='houses_list'>
   <div class='app-wrapper'>
     <div class='map-area'>
       <div id="markers">
@@ -114,8 +116,8 @@
       </div>
     </div>
   </div>
-</body>
+</section>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=<%#= ENV['GOOGLE_MAP_API_KEY']%>"></script> -->

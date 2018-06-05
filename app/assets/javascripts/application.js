@@ -9,24 +9,28 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 
 //= require vue
-//= require vue-router 
-//= require vue-resource 
-//= require vuex 
+//= require vue-router
+//= require vue-resource
+//= require vuex
 //= require rails-ujs
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require font_awesome5
+//= require jquery_ujs
 //= require jquery.slick
-//= require ckeditor/init
-//= require react
-//= require react_ujs
-//= require components
-//= require_tree .
 //= require scrollReveal
+//= require ckeditor/init
 
-$(function() {
-  window.scrollReveal = new scrollReveal();
-});
+//= require_tree .
+
+(function () {
+  window.onload = function() {
+    window.scrollReveal = new scrollReveal();
+
+    // Bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+  };
+}());
