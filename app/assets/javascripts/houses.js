@@ -1,9 +1,7 @@
 /* global Vue */
 document.addEventListener("DOMContentLoaded", function(event) {
-
-// BEGIN: Vuex store to contain ajax call for houses (to use globally)
+  // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
-
     state: {
       facilities: [],
       selectedFilters: ["Dogs"]
@@ -46,12 +44,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         state.selectedFilters = state.selectedFilters.push(selectedFilter)
       }
     }
-
   })
-// END: Vuex store to contain ajax call for houses (to use globally)
+  // END: Vuex store to contain ajax call for houses (to use globally)
 
-
-// BEGIN: markers for map from houses json
+  // BEGIN: markers for map from houses json
   let vm = new Vue({
     store,
     el: '#markers',
@@ -68,9 +64,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var locations = [];
 
         for(var i = 0; i < homes.length; i++) {
-
           if(selectedFilters.length >= 1) {
-
             var filterArray = homes[i].filters.map(function (filter) {
               return filter.filter;
             });
@@ -86,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
               details.description = homes[i].name;
               locations.push(details);
             }
-
           } else {
             var details = {};
             details.title = homes[i].property_description;
@@ -99,89 +92,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
             locations.push(details);
           }
         }
-
-      return locations;
+        return locations;
+      }
     }
-  }
-})
-// END: markers for map from houses json
+  })
+  // END: markers for map from houses json
 
-
-// BEGIN: houses display for right column & filter methods
-  var app = new Vue({
-    store,
-    el: '#app',
-    data: {
-      sortAttribute: 'name',
-      sortAscending: true,
-      priceFilter: '',
-      distanceFilter: '',
-    },
-
-    created () {
-      this.$store.dispatch('getList')
-    },
-
-    methods: {
-      filterHouses: function(house) {
-        var selectedFilters = this.$store.getters.selectedFilters;
-
-          if(selectedFilters.length >= 1) {
-            var filterArray = house.filters.map(function (filter) {
-              return filter.filter;
-            });
-            return selectedFilters.every(elem => filterArray.indexOf(elem) > -1)
-          } else {
-            return true;
-          }
-      },
-
-      setSortAttribute: function(inputAttribute) {
-        if(inputAttribute !== this.sortAttribute) {
-          this.sortAscending = true;
-        } else {
-          this.sortAscending = !this.sortAscending;
-        }
-        this.sortAttribute = inputAttribute;
-       },
-
-      formatPrice: function(value) {
-        let val = (value/1).toFixed(2)
-        return val;
-      }
-    },
-
-    computed: {
-
-      modifiedHouses: function() {
-        return this.$store.getters.facilities;
-      }
-     }
-  });
-// END: houses display for right column & filter methods
-
-
-// BEGIN: map display & define markers
+  // BEGIN: map display & define markers
   Vue.component('vue-map', {
     template: '#map',
     props: {
       markers: {
         type: Array,
         default: []
-      },
-      option: {
-        type: Object,
-        default: {
-          zoom: 12,
-          center: {lat: 37.769436, lng: -122.447662},
-        }
       }
     },
+
+    option: {
+      type: Object,
+      default: {
+        zoom: 12,
+        center: {lat: 37.769436, lng: -122.447662},
+      }
+    },
+
     data: function() {
       return {
         map: {}
       }
     },
+
     mounted: function() {
       let el = this.$el;
       let bounds = new google.maps.LatLngBounds();
@@ -218,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           description: pos.description
         })
         let infoWindow = new google.maps.InfoWindow();
-        infoWindow.setContent('<div class="map__info"><a href="houses/' + pos.id + '"> <img width="120" height="90" src=' + pos.imageUrl + '> </a> <p>' + pos.description + '<br>' + this.formatPrice(pos.price) + '</p> </div>');
+        infoWindow.setContent('<div class="map__info"><a href="houses/' + pos.id + '"> <img width="120" height="90" src=' + pos.imageUrl + '> </a> <p>' + pos.description + '<br>' + '$' + this.formatPrice(pos.price) + '</p> </div>');
 
         // // Setup event for marker
         google.maps.event.addListener(marker, 'click', () => {
@@ -235,7 +175,58 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
   })
-// END: map display & define markers
+  // END: map display & define markers
 
+  // BEGIN: houses display for right column & filter methods
+  var app = new Vue({
+    store,
+    el: '#app',
+    data: {
+      sortAttribute: 'name',
+      sortAscending: true,
+      priceFilter: '',
+      distanceFilter: '',
+    },
+
+    created () {
+      this.$store.dispatch('getList')
+    },
+
+    methods: {
+      filterHouses: function(house) {
+        var selectedFilters = this.$store.getters.selectedFilters;
+        if(selectedFilters.length >= 1) {
+          var filterArray = house.filters.map(function (filter) {
+            return filter.filter;
+          });
+          return selectedFilters.every(elem => filterArray.indexOf(elem) > -1)
+        } else {
+          return true;
+        }
+      },
+
+      setSortAttribute: function(inputAttribute) {
+        if(inputAttribute !== this.sortAttribute) {
+          this.sortAscending = true;
+        } else {
+          this.sortAscending = !this.sortAscending;
+        }
+        this.sortAttribute = inputAttribute;
+      },
+
+      formatPrice: function(value) {
+        let val = (value/1).toFixed(2)
+        return val;
+      }
+    },
+
+    computed: {
+      modifiedHouses: function() {
+        return this.$store.getters.facilities;
+      }
+    }
+  });
+  // END: houses display for right column & filter methods
 
 });
+
