@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           description: pos.description
         })
         let infoWindow = new google.maps.InfoWindow();
-        infoWindow.setContent('<div class="map__info"><a href="houses/' + pos.id + '"> <img width="120" height="90" src=' + pos.imageUrl + '> </a> <p>' + pos.description + '<br>' + this.formatPrice(pos.price) + '</p> </div>');
+        infoWindow.setContent('<div class="map__info"><a href="houses/' + pos.id + '"> <img width="120" height="90" src=' + pos.imageUrl + '> </a> <p>' + pos.description + '<br>' + '$' + this.formatPrice(pos.price) + '</p> </div>');
 
         // // Setup event for marker
         google.maps.event.addListener(marker, 'click', () => {
@@ -229,3 +229,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // END: houses display for right column & filter methods
 
 });
+
