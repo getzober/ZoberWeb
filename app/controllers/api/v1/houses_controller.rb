@@ -1,6 +1,6 @@
 class Api::V1::HousesController < ApplicationController
   def index
-    # @houses = House.limit(10).order('created_at DESC')
+    @houses = House.all
     render 'index.json.jbuilder'
   end
 
