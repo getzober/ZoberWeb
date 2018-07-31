@@ -54,14 +54,11 @@
 <body class='houses_list'>
   <div class='app-wrapper'>
     <div class='map-area'>
-      <div id="markers">
+      <div id='map'> </div>
+      <!-- <div id="markers">
         <vue-map :markers="locations"></vue-map>
-      </div>
+      </div> -->
     </div>
-
-    <script type="text/x-template" id="map">
-      <div class="map"> </div>
-    </script>
 
     <div id="app">
       <div class='sidebar'>
@@ -115,7 +112,3 @@
     </div>
   </div>
 </body>
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY']%>"></script>

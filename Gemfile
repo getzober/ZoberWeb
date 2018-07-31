@@ -5,47 +5,26 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# A set of Rails responders to dry up your application
 gem 'responders', '~> 2.4'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 gem 'figaro'
-# For hashing passwords
 gem 'bcrypt-ruby', '3.1.2'
 
 gem "omniauth-google-oauth2", "~> 0.2.1"
 
 gem 'geocoder', '~> 1.4'
-# To reate/maintain how elements fade in
 gem "scrollreveal-rails"
-# A simple asset-pipeline wrapper for Vue.js
 gem 'vuejs-rails'
-# Integrates Slick carousel, a jQuery plugin, into your Rails app.
 gem "jquery-slick-rails"
-# A simple asset-pipeline wrapper for React
 gem 'react-rails'
 gem 'webpacker'
-# Use Puma as the app server
 gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 gem 'ckeditor', github: "galetahub/ckeditor"
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 gem 'normalize-rails'
 gem 'bootstrap_form'
 gem 'pg'
@@ -63,34 +42,29 @@ gem 'stripe'
 gem 'devise'
 gem 'toastr-rails'
 gem 'pundit'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 gem 'social-share-button'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "pundit"
+
 group :development, :test do
   gem 'pg'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # env gem for api keys and such
   gem 'dotenv-rails'
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
+
 group :production do
   gem 'pg'
 end
+
 group :development do
   gem 'pg'
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,6 +1,35 @@
 /* global Vue */
 document.addEventListener("DOMContentLoaded", function(event) {
 
+  const $map = document.getElementById('map')
+
+  function renderMap(query) {
+    while ($map.firstChild) {
+      $map.removeChild($map.firstChild)
+    }
+    // if no query, geolocate by ip
+    // add child iframe
+    let iframe = document.createElement('IFRAME')
+    iframe.width = '100%'
+    iframe.height = '100%'
+    //iframe.frameborder = '0'
+    iframe.src = `https://www.google.com/maps/embed/v1/search?q=${query}&key=AIzaSyDenw_CUWBGti0bby5QPmsK-EnPXyNimH4`
+    $map.appendChild(iframe)
+  }
+
+  renderMap('starbucks')
+  renderMap('microsoft')
+
+  /*
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+  }
+  */
+
 // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
 
@@ -506,6 +535,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // BEGIN: map display & define markers
+/*
   Vue.component('vue-map', {
     template: '#map',
     props: {
@@ -581,6 +611,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   })
 // END: map display & define markers
 
+*/
 
 });
-
