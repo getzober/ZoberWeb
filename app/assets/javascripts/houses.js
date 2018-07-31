@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
   const $map = document.getElementById('map')
+  const $searchSubmit = document.getElementById('search-submit')
 
   function renderMap(query) {
     while ($map.firstChild) {
@@ -12,14 +13,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let iframe = document.createElement('IFRAME')
     iframe.width = '100%'
     iframe.height = '100%'
-    //iframe.frameborder = '0'
     iframe.src = `https://www.google.com/maps/embed/v1/search?q=${query}&key=AIzaSyDenw_CUWBGti0bby5QPmsK-EnPXyNimH4`
     $map.appendChild(iframe)
   }
 
   renderMap('starbucks')
-  renderMap('microsoft')
 
+  document.addEventListener()
   /*
   var map;
   function initMap() {
