@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const $map = document.getElementById('map')
   const $searchSubmit = document.getElementById('search-submit')
 
-  function renderMap(query) {
+  const renderMap = (query) => {
     while ($map.firstChild) {
       $map.removeChild($map.firstChild)
     }
-    // if no query, geolocate by ip
-    // add child iframe
     let iframe = document.createElement('IFRAME')
     iframe.width = '100%'
     iframe.height = '100%'
@@ -19,7 +17,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   renderMap('starbucks')
 
-  document.addEventListener()
+  $searchSubmit.addEventListener('click', (event) => {
+    let $query = document.getElementById('search-value').value
+    renderMap($query)
+  })
+
   /*
   var map;
   function initMap() {
