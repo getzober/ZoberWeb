@@ -31,6 +31,57 @@ House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', cit
                     recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus
                     maiores alias consequatur aut perferendis doloribus asperiores repellat.' )
 
+# ["Alabama", "AL"]
+# ["Alaska", "AK"]
+# ["Arizona - AZ
+# ["Arkansas - AR
+# ["California - CA
+# ["Colorado - CO
+# ["Connecticut - CT
+# ["Delaware - DE
+# ["Florida - FL
+# ["Georgia - GA
+# ["Hawaii - HI
+# ["Idaho - ID
+# ["Illinois - IL
+# ["Indiana - IN
+# ["Iowa - IA
+# ["Kansas - KS
+# ["Kentucky - KY
+# ["Louisiana - LA
+# ["Maine - ME
+# ["Maryland - MD
+# ["Massachusetts - MA
+# ["Michigan - MI
+# ["Minnesota - MN
+# ["Mississippi - MS
+# ["Missouri - MO
+# ["Montana - MT
+# ["Nebraska - NE
+# ["Nevada - NV
+# ["New Hampshire - NH
+# ["New Jersey - NJ
+# ["New Mexico - NM
+# ["New York - NY
+# ["North Carolina - NC
+# ["North Dakota - ND
+# ["Ohio - OH
+# ["Oklahoma - OK
+# ["Oregon - OR
+# ["Pennsylvania - PA
+# ["Rhode Island - RI
+# ["South Carolina - SC
+# ["South Dakota - SD
+# ["Tennessee" - TN
+# ["Texas" - TX
+# ["Utah" - UT
+# ["Vermont" - VT
+# ["Virginia" - VA
+# ["Washington" - WA
+# ["West Virginia" - WV
+# ["Wisconsin" - WI
+# ["Wyoming" - WY
+
 # Provider.create!( firstname: 'John', lastname: 'Doe', organization: 'Sober Provider', occupation: 'Outreach Manager',
 #                   email: 'johndoe@sobprov.com', role: 1, password: 'password1', password_confirmation: 'password1',
 #                   salt: 'salt', stripe_account_id: 0, subscribed: true )
