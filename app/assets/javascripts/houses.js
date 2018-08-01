@@ -2,50 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-class HousesMap {
-  constructor(params={}) {
-    this.mapParent = params.map || document.getElementById('map')
-    this.googleUrlBase = 'https://www.google.com/maps/api/js?key=AIzaSyDenw_CUWBGti0bby5QPmsK-EnPXyNimH4'
-  }
-
-  initMap() {
-    this.map = new google.maps.Map(this.mapParent, {
-      center: new google.maps.LatLng(28.39404819, -91.38743867),
-      zoom: 8,
-    })
-  }
-
-  render(query) {
-    this._resetMapChildren()
-    //this._appendGoogleSource()
-    this.initMap() 
-  }
-
-  placeMarkers() {
-    
-  }
-
-  _resetMapChildren() {
-    while (this.mapParent.firstChild) {
-      this.mapParent.removeChild(this.mapParent.firstChild)
-    }
-  }
-
-  _appendGoogleSource() {
-    let head = document.getElementsByTagName('head')[0]
-    let googleScript = document.createElement('script')
-    googleScript.src = this.googleUrlBase
-    head.appendChild(googleScript)
-  }
-
-}
-
-HousesService = {
-  search: async (query) => {
-    let houses = await axios.get(`/api/v1/houses/?search=${query}`)
-  }
-}
-
   const housesMap = new HousesMap()
   const $searchSubmit = document.getElementById('search-submit')
 

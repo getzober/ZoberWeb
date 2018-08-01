@@ -1,24 +1,38 @@
-/*
-export default class HousesMap {
+class HousesMap {
   constructor(params={}) {
-    this.map = params.map || document.getElementById('map')
-    this.googleUrlBase = 'https://www.google.com/maps/embed/v1/search?key=AIzaSyDenw_CUWBGti0bby5QPmsK-EnPXyNimH4'
+    this.mapParent = params.map || document.getElementById('map')
+    this.markers = []
+  }
+
+  initMap() {
+    this.map = new google.maps.Map(this.mapParent, {
+      center: new google.maps.LatLng(28.39404819, -91.38743867),
+      zoom: 8,
+    })
   }
 
   render(query) {
     this._resetMapChildren()
-    let iframe = document.createElement('IFRAME')
-    iframe.width = '100%'
-    iframe.height = '100%'
-    iframe.src = this.googleUrlBase + '&q=' + query
-    this.map.appendChild(iframe)
+    this.initMap() 
+    if (query) { this.placeMarkers(query) }
+  }
+
+  async placeMarkers(query) {
+    let houses = await HousesService.search(query)  
+    houses.forEach((house) => {
+      this.markers.push(
+        new google.maps.Marker({
+          position: {lat: house.latitude, lng: house.longitude},
+          map: this.map,
+        })
+      )
+    })
   }
 
   _resetMapChildren() {
-    while (this.map.firstChild) {
-      this.map.removeChild(this.map.firstChild)
+    while (this.mapParent.firstChild) {
+      this.mapParent.removeChild(this.mapParent.firstChild)
     }
   }
 
 }
-*/
