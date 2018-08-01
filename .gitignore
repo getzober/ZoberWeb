@@ -35,3 +35,4 @@ logfile
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+package-lock.json

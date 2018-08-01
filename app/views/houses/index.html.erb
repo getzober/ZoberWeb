@@ -53,11 +53,8 @@
 
 <body class='houses_list'>
   <div class='app-wrapper'>
-    <div class='map-area'>
+    <div id='map-area'>
       <div id='map'> </div>
-      <!-- <div id="markers">
-        <vue-map :markers="locations"></vue-map>
-      </div> -->
     </div>
 
     <div id="app">
@@ -95,8 +92,6 @@
 
                 <div class="col-4">
                   <span class="imagebox-desc">
-                  {{house.name}}
-                  ${{formatPrice(house.price)}}
                   </span>
                 </div>
               </a>

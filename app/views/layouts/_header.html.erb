@@ -54,6 +54,7 @@
 </header>
 
 <script>
+  /*
   function activatePlacesSearch(){
     var input = document.getElementById('search_term');
     var options = {
@@ -62,6 +63,6 @@
     };
     var autocomplete = new google.maps.places.Autocomplete(input, options);
   }
+  */
 </script>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= + <%=ENV['GOOGLE_MAP_API_KEY']%> + &libraries=places&callback=activatePlacesSearch"></script>
+<script src="https://www.google.com/maps/api/js?key=<%= ENV['google_map_api_key'] %>"> </script>

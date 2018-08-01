@@ -1,37 +1,63 @@
 /* global Vue */
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  const $map = document.getElementById('map')
-  const $searchSubmit = document.getElementById('search-submit')
-
-  const renderMap = (query) => {
-    while ($map.firstChild) {
-      $map.removeChild($map.firstChild)
-    }
-    let iframe = document.createElement('IFRAME')
-    iframe.width = '100%'
-    iframe.height = '100%'
-    iframe.src = `https://www.google.com/maps/embed/v1/search?q=${query}&key=AIzaSyDenw_CUWBGti0bby5QPmsK-EnPXyNimH4`
-    $map.appendChild(iframe)
+class HousesMap {
+  constructor(params={}) {
+    this.mapParent = params.map || document.getElementById('map')
+    this.googleUrlBase = 'https://www.google.com/maps/api/js?key=AIzaSyDenw_CUWBGti0bby5QPmsK-EnPXyNimH4'
   }
 
-  renderMap('starbucks')
+  initMap() {
+    this.map = new google.maps.Map(this.mapParent, {
+      center: new google.maps.LatLng(28.39404819, -91.38743867),
+      zoom: 8,
+    })
+  }
+
+  render(query) {
+    this._resetMapChildren()
+    //this._appendGoogleSource()
+    this.initMap() 
+  }
+
+  placeMarkers() {
+    
+  }
+
+  _resetMapChildren() {
+    while (this.mapParent.firstChild) {
+      this.mapParent.removeChild(this.mapParent.firstChild)
+    }
+  }
+
+  _appendGoogleSource() {
+    let head = document.getElementsByTagName('head')[0]
+    let googleScript = document.createElement('script')
+    googleScript.src = this.googleUrlBase
+    head.appendChild(googleScript)
+  }
+
+}
+
+HousesService = {
+  search: async (query) => {
+    let houses = await axios.get(`/api/v1/houses/?search=${query}`)
+  }
+}
+
+  const housesMap = new HousesMap()
+  const $searchSubmit = document.getElementById('search-submit')
+
+  housesMap.render('starbucks')
 
   $searchSubmit.addEventListener('click', (event) => {
     let $query = document.getElementById('search-value').value
-    renderMap($query)
+    housesMap.render($query)
   })
 
-  /*
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 8
-    });
-  }
-  */
-
+})
+/*
 // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
 
@@ -613,6 +639,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   })
 // END: map display & define markers
 
-*/
 
 });
+*/
