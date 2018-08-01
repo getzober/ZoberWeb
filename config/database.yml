@@ -17,12 +17,14 @@ development:
 
 test:
   adapter: postgresql
-  encoding: unicode
+  encoding: unicode3
   database: myapp_test
   pool: 5
+
   
 production:
   <<: *default
   database: db/production.postresql
-  username: postgres 
+  username: postgres
   password: password
+
