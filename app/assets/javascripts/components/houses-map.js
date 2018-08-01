@@ -19,6 +19,7 @@ class HousesMap {
 
   async placeMarkers(query) {
     let houses = await HousesService.search(query)  
+    if (!houses) { return }
     houses.forEach((house) => {
       this.markers.push(
         new google.maps.Marker({

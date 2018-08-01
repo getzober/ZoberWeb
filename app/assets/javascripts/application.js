@@ -23,7 +23,7 @@
 //= require ckeditor/init
 //= require react
 //= require react_ujs
-//= require axios
+//= require axios/dist/axios.min
 //= require_tree .
 //= require_tree ./services
 //= require_tree ./components
