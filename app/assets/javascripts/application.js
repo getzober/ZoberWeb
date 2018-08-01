@@ -23,8 +23,10 @@
 //= require ckeditor/init
 //= require react
 //= require react_ujs
-//= require components
+//= require axios/dist/axios.min
 //= require_tree .
+//= require_tree ./services
+//= require_tree ./components
 //= require scrollReveal
 
 $(function() {

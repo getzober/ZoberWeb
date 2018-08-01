@@ -1,116 +1,60 @@
-<% if current_user %>
-
 <header class="navbar navbar-expand-lg navbar-light fixed-top" id="secondNav">
-      <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="/houses"> <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
-        <button class=" menu navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-</button>
-<div class="col-md-5 mx-auto">
-<%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], id: "search_term", name:"user_location", placeholder: "enter city, state or zipcode", class: "search_field" %>
-<%= submit_tag "search", class: "btn btn-sm btn-default" do %>
-<%end%>
-<% end %>
+
+  <div class="container-fluid">
+    <a href="/houses">
+      <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>
+    </a>
   </div>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/index">providers</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/about">about</a>
-        </li>
-        <!-- commenting out social link for now
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/social">social</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/blogs">blog</a>
-        </li>
-        <!-- <li class="dropdown users">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">users <span class="caret"></span></a>
-                 <ul class="dropdown-menu providers">
-                 <% if user_signed_in? %>
-                  <li class="link_items"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "link_items" %></li>
-<li ><%= link_to "dashboard", index_path, class: "link_items" %></li>
-                 <% else %>
-                  <li class="link_items"><%= link_to "register", new_user_registration_path, class: "link_items" %></li>
-                  <li class="link_items"><%= link_to "login", new_user_session_path, class: "link_items" %></li>
 
-                 <% end %>
 
-                 </ul>
-               </li> -->
+  <div class="col-md-5 mx-auto">
+    <input id="search-value" type="text" placeholder="Enter city, state, or zip to find treatment or sober living">
+    <input id="search-submit" type="submit" value="Search">
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="/about">about</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="/social">social</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="/blogs">blog</a>
+      </li>
+
+      <% if user_signed_in? %>
+        <li class="link_items">
+          <%= link_to "logout", destroy_user_session_path, method: :delete, class: "link_items" %>
+        </li>
+
+        <li>
+          <%= link_to "dashboard", index_path, class: "link_items" %>
+        </li>
+        
+      <% else %>
+          
+        <li class="link_items">
+          <%= link_to "register", new_user_registration_path, class: "link_items" %>
+        </li>
+          
+        <li class="link_items">
+          <%= link_to "login", new_user_session_path, class: "link_items" %>
+        </li>
+
+      <% end %>
+
+        </ul>
       </ul>
     </div>
   </div>
 </header>
-
-<% else %>
-
-<header class="navbar navbar-expand-lg navbar-light fixed-top" id="secondNav">
-      <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="/houses"> <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%></a>
-        <button class=" menu navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-</button>
-<div class="col-md-5 mx-auto">
-<%= form_tag(houses_path, :method => "get", id: "search-form") do %>
-<%= search_field_tag :search, params[:search], id: "search_term", name:"user_location", placeholder: "enter city, state or zipcode", class: "search_field" %>
-<%= submit_tag "search", class: "btn btn-sm btn-default" do %>
-<%end%>
-<% end %>
-  </div>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <!-- <li class="dropdown providers">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">providers <span class="caret"></span></a>
-                 <ul class="dropdown-menu providers">
-                 <% if provider_signed_in? %>
-                 <li><%= link_to "dashboard", index_path, class: "link_items" %></li>
-                  <li><%= link_to "logout", destroy_provider_session_path, method: :delete, class: "link_items" %></li>
-                 <% else %>
-                  <li><%= link_to "sign up", new_provider_registration_path, class: "link_items" %></li>
-                  <li><%= link_to "login", new_provider_session_path, class: "link_items" %></li>
-                 <% end %>
-
-                 </ul>
-               </li> -->
-
-        <li class="about-zober nav-item">
-          <a class=" about-zober2 nav-link js-scroll-trigger" href="/about">about</a>
-        </li>
-        <!-- commenting out link for now
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="/social">social</a>
-        </li> -->
-        <li class=" about-zober nav-item">
-          <a class="about-zober2 nav-link js-scroll-trigger" href="/blogs">read</a>
-        </li>
-        <!-- commenting out for now
-        <li class="dropdown users">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">users <span class="caret"></span></a>
-                 <ul class="dropdown-menu providers">
-                 <% if user_signed_in? %>
-                  <li class="link_items"><%= link_to "logout", destroy_user_session_path, method: :delete, class: "link_items" %></li>
-<li ><%= link_to "dashboard", index_path, class: "link_items" %></li>
-                 <% else %>
-                  <li class="link_items"><%= link_to "register", new_user_registration_path, class: "link_items" %></li>
-                  <li class="link_items"><%= link_to "login", new_user_session_path, class: "link_items" %></li>
-
-                 <% end %>
-
-                 </ul>
-               </li> -->
-      </ul>
-    </div>
-  </div>
-</header>
-
-<% end %>
 
 <script>
+  /*
   function activatePlacesSearch(){
     var input = document.getElementById('search_term');
     var options = {
@@ -119,6 +63,6 @@
     };
     var autocomplete = new google.maps.places.Autocomplete(input, options);
   }
+  */
 </script>
-
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key= + <%=ENV['GOOGLE_MAP_API_KEY']%> + &libraries=places&callback=activatePlacesSearch"></script>
+<script src="https://www.google.com/maps/api/js?key=<%= ENV['google_map_api_key'] %>"> </script>

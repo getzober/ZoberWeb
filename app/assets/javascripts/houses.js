@@ -1,6 +1,19 @@
 /* global Vue */
+
 document.addEventListener("DOMContentLoaded", function(event) {
 
+  const housesMap = new HousesMap()
+  const $searchSubmit = document.getElementById('search-submit')
+
+  housesMap.render('starbucks')
+
+  $searchSubmit.addEventListener('click', (event) => {
+    let $query = document.getElementById('search-value').value
+    housesMap.render($query)
+  })
+
+})
+/*
 // BEGIN: Vuex store to contain ajax call for houses (to use globally)
   const store = new Vuex.Store({
 
@@ -506,6 +519,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // BEGIN: map display & define markers
+/*
   Vue.component('vue-map', {
     template: '#map',
     props: {
@@ -583,4 +597,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 });
-
+*/
