@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180512211833) do
+ActiveRecord::Schema.define(version: 20180802164311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20180512211833) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "amenities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "amenities_houses", id: false, force: :cascade do |t|
+    t.bigint "amenity_id", null: false
+    t.bigint "house_id", null: false
+    t.index ["amenity_id", "house_id"], name: "index_amenities_houses_on_amenity_id_and_house_id"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -116,6 +128,7 @@ ActiveRecord::Schema.define(version: 20180512211833) do
     t.float "longitude"
     t.string "street2"
     t.string "phone"
+    t.text "bio"
   end
 
   create_table "images", force: :cascade do |t|
@@ -184,6 +197,13 @@ ActiveRecord::Schema.define(version: 20180512211833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "uuid"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "full_name"
+    t.string "abbreviation"
   end
 
   create_table "topics", force: :cascade do |t|
