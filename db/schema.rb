@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180802164311) do
+ActiveRecord::Schema.define(version: 20180802165211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accredidations_houses", id: false, force: :cascade do |t|
+    t.bigint "accredidation_id", null: false
+    t.bigint "house_id", null: false
+    t.index ["accredidation_id", "house_id"], name: "index_accredidations_houses_on_accredidation_id_and_house_id"
+  end
+
+  create_table "accreditations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false

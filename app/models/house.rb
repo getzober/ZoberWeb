@@ -4,6 +4,7 @@ class House < ApplicationRecord
   has_many :filters, through: :house_filters
   belongs_to :provider, optional: true
   has_and_belongs_to_many :amenities
+  has_and_belongs_to_many :accreditations
   geocoded_by :address
   
   def address
