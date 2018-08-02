@@ -14,6 +14,7 @@
 //= require_tree .
 //= require_tree ./services
 //= require_tree ./components
+//= require_tree ./event-listeners
 //= require scrollReveal
 
 $(function() {

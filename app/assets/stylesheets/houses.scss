@@ -1,19 +1,61 @@
-// Place all the styles related to the houses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin filter {
+  font-size: 13px;
+  border-style: solid;
+  border-radius: 20;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
 #secondNav {
   background-color:#ef8b3e;
 }
-
 // houses index/list
+
+#filters {
+  position: absolute;
+  top: 40%;
+}
+
+.filter {
+  @include filter;
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+.filter:hover {
+  @include filter;
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.filter-active {
+  @include filter;
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.filter-selection {
+  font-size: 13px;
+}
+
+.filter-selection-active {
+  font-size: 13px;
+  background-color: lightblue;
+  color: white;
+}
 
 menu {
   width: 100%;
-  height: 50px;
+  height: 57px;
   background-color: #000000;
   background-size:100% 100%;
   position: fixed;
-  top: 60px;
+  top: 56px;
   .nav {
     padding-top: 15px;
   }

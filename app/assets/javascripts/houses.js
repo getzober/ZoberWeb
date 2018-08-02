@@ -1,16 +1,10 @@
-/* global Vue */
-
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  const housesMap = new HousesMap()
-  const $searchSubmit = document.getElementById('search-submit')
+  const housesListeners = new HousesListeners()
+  
+  housesListeners.addSearch()
 
-  housesMap.render('starbucks')
-
-  $searchSubmit.addEventListener('click', (event) => {
-    let $query = document.getElementById('search-value').value
-    housesMap.render($query)
-  })
+  housesListeners.addFilterDropdowns()
 
 })
 /*

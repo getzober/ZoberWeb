@@ -11,7 +11,7 @@ class HousesMap {
     })
   }
 
-  render(query) {
+  render(query=null) {
     this._resetMapChildren()
     this.initMap() 
     if (query) { this.placeMarkers(query) }
