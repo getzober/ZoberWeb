@@ -5,6 +5,7 @@ class House < ApplicationRecord
   belongs_to :provider, optional: true
   has_and_belongs_to_many :amenities
   has_and_belongs_to_many :accreditations
+  has_and_belongs_to_many :insurance_companies
   geocoded_by :address
   
   def address
