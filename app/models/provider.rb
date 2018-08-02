@@ -1,5 +1,5 @@
 class Provider < ApplicationRecord
-  attr_accessor :role
+attr_accessor :role
   enum role: [:provider, :nonprofit]
 # after_initialize :set_default_role, :if => :new_record?
   # Include default devise modules. Others available are:
