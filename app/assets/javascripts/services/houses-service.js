@@ -2,12 +2,11 @@ class HousesService {
   static async search(params={}) {
     let houses = await axios.get('/api/v1/houses', {
       params: {
-        lat: options.lat,
-        lng: options.lng,
-        distance: options.distance,
+        lat: params.lat,
+        lng: params.lng,
+        distance: params.distance,
       },
     })
-    debugger
     return houses
   }
 }

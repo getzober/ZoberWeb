@@ -1,15 +1,14 @@
 <header class="navbar navbar-expand-lg navbar-light fixed-top" id="secondNav">
 
-  <div class="container-fluid">
+  <div id="main-icon">
     <a href="/houses">
       <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>
     </a>
   </div>
 
 
-  <div class="col-md-5 mx-auto">
+  <div id="searchbar">
     <input id="search-value" type="text" placeholder="Enter city, state, or zip to find treatment or sober living">
-    <input id="search-submit" type="submit" value="Search">
   </div>
 
   <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -53,16 +52,4 @@
   </div>
 </header>
 
-<script>
-  /*
-  function activatePlacesSearch(){
-    var input = document.getElementById('search_term');
-    var options = {
-      types: ['geocode'],
-      componentRestrictions: {country: 'us'}
-    };
-    var autocomplete = new google.maps.places.Autocomplete(input, options);
-  }
-  */
-</script>
 <script src="https://www.google.com/maps/api/js?key=<%= ENV['google_map_api_key'] %>&libraries=places"> </script>

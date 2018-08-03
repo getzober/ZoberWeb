@@ -3,14 +3,17 @@ class HousesListeners {
     this.housesMap = new HousesMap()
     this.housesFilters = new HousesFilters()
     this.$filters = document.getElementById('filters')
-    this.$searchSubmit = document.getElementById('search-submit')
     this.housesMap.initMap()
   }
 
   addSearch() {
-    this.$searchSubmit.addEventListener('click', async (event) => {
-      let $query = document.getElementById('search-value').value
-      this.housesMap.query($query)
+    document.addEventListener('keypress', async (event) => {
+      let key = event.which || event.keyCode
+      if (key === 13) {
+        console.log('yas queen')
+        let $query = document.getElementById('search-value').value
+        this.housesMap.query($query)
+      }
     })
   }
 

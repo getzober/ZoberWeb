@@ -2,6 +2,8 @@ class HousesMap {
   constructor(params={}) {
     this.mapParent = params.map || document.getElementById('map')
     this.markers = []
+    this.map
+    this.placesService
   }
 
   async initMap(coordinates) {
