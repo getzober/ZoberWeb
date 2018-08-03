@@ -8,6 +8,7 @@ nav {
 
 #searchbar {
   width: 50%;
+  padding-right: 10px;
 }
 
 #search-value {
@@ -23,6 +24,14 @@ nav {
 #secondNav {
   background-color:#000000;
 }
+
+#header-items {
+}
+
+.header-item {
+  padding: 1em;
+}
+
 // .nav-link .js-scroll-trigger {
 //   color: white;
 // }

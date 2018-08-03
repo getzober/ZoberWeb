@@ -1,6 +1,8 @@
 class HousesController < ApplicationController
 
   def index
+    # sort by geolocation
+    @houses = House.all
   end
 
   def new

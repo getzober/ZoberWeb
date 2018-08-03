@@ -6,49 +6,29 @@
     </a>
   </div>
 
-
   <div id="searchbar">
     <input id="search-value" type="text" placeholder="Enter city, state, or zip to find treatment or sober living">
   </div>
 
-  <div class="collapse navbar-collapse" id="navbarResponsive">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/about">about</a>
-      </li>
+  <div id="header-items">
+    <a class="header-item" href="/about">about</a>
+    <a class="header-item" href="/social">social</a>
+    <a class="header-item" href="/blogs">blog</a>
 
-      <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/social">social</a>
-      </li>
+    <% if user_signed_in? %>
 
-      <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="/blogs">blog</a>
-      </li>
-
-      <% if user_signed_in? %>
-        <li class="link_items">
-          <%= link_to "logout", destroy_user_session_path, method: :delete, class: "link_items" %>
-        </li>
-
-        <li>
-          <%= link_to "dashboard", index_path, class: "link_items" %>
-        </li>
+      <%= link_to "dashboard", index_path, class: "header-item link_items" %>
+      
+      <%= link_to "logout", destroy_user_session_path, method: :delete, class: "header-item link_items" %>
         
-      <% else %>
+    <% else %>
           
-        <li class="link_items">
-          <%= link_to "register", new_user_registration_path, class: "link_items" %>
-        </li>
-          
-        <li class="link_items">
-          <%= link_to "login", new_user_session_path, class: "link_items" %>
-        </li>
+      <%= link_to "login", new_user_session_path, class: "header-item link_items" %>
 
-      <% end %>
+      <%= link_to "register", new_user_registration_path, class: "header-item link_items" %>
 
-        </ul>
-      </ul>
-    </div>
+    <% end %>
+
   </div>
 </header>
 
