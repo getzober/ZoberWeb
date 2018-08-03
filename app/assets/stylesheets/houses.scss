@@ -41,6 +41,7 @@
 
 .filter-selection {
   font-size: 13px;
+  position: relative;
 }
 
 .filter-selection-active {
@@ -149,13 +150,6 @@ menu {
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
-}
-
-#amenities {
-  font-size: 25px;
-  margin: 0px;
-  padding: 0px;
-  color: #626262;
 }
 
 #icons8 {

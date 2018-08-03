@@ -16,6 +16,7 @@ class HousesListeners {
 
   addFilterDropdowns() {
     this.$filters.addEventListener('click', (event) => {
+      if (event.target.id === 'filters') { return }
       this._removeFilterDropdowns()
       this.housesFilters.toggleFilterDropdown(event.target)
       this._addFilterSelections(event.target)
