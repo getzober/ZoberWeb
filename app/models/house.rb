@@ -6,11 +6,16 @@ class House < ApplicationRecord
   geocoded_by :address
   
   def address
-    [street, city, state, "United States"].compact.join(', ')
+    [street, city, state, "United States"].compact.join(", ")
   end
 
-  def self.search( search = '' )
-    where("city ~* ? OR state ~* ? OR zip_code = ?", search, search, search.to_i ).order("created_at DESC")
+  def self.search(options = {})
+    distance = options[:distance] || 50
+    if options[:lat] and options[:lng]
+      houses_within_range(options[:lat], options[:lng], distance)
+    else
+      all
+    end
   end
 
   def filters_with_category( category_name )
@@ -25,4 +30,34 @@ class House < ApplicationRecord
       filters_to_return.first.filter
     end
   end
+  
+  private
+    
+    def self.houses_within_range(lat, lng, distance)
+      where("
+        latitude <= #{high_lat(lat, distance)} 
+        AND latitude >= #{low_lat(lat, distance)} 
+        AND longitude <= #{high_lng(lat, lng, distance)} 
+        AND longitude >= #{low_lng(lat, lng, distance)}
+      ")
+    end
+
+    def self.high_lat(lat, distance)
+      lat + (distance / 69)
+    end
+
+    def self.low_lat(lat, distance)
+      lat - (distance / 69)
+    end
+
+    def self.high_lng(lat, lng, distance)
+      lat_radians = (lat * Math::PI) / 180
+      lng + (distance / (Math.cos(lat_radians) * 69.172))
+    end
+
+    def self.low_lng(lat, lng, distance)
+      lat_radians = (lat * Math::PI) / 180
+      lng - (distance / (Math.cos(lat_radians) * 69.172))
+    end
+
 end
