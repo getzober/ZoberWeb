@@ -2,6 +2,7 @@ class HousesFilters {
   constructor() {
     this.content = houseFilterDropdownContent
     this.$active = null
+    this.selections = {}
   }
 
   toggleFilterDropdown($filter) {
@@ -14,7 +15,14 @@ class HousesFilters {
   }
 
   selectOption(selection) {
-
+    let filter = selection.parentElement.parentElement
+    if (this.selections[filter.id] === selection.textContent) {
+      this.selections[filter.id] = undefined
+      selection.classList.remove('selected')
+    } else {
+      this.selections[filter.id] = selection.textContent
+      selection.classList.add('selected')
+    }
   }
 
   _removeDropdown() {
@@ -30,6 +38,7 @@ class HousesFilters {
       return
     } else {
       let options = document.createElement('DL')
+      options.classList.add('filter-selections')
       let key = this._formatKey($filter.id)
       this.content[key].forEach((value) => {
         let option = this._formatDropdownOption(value)
