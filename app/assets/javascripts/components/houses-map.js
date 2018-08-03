@@ -4,10 +4,12 @@ class HousesMap {
     this.markers = []
   }
 
-  initMap() {
+  async initMap(coordinates) {
+    this._removeMap()
+    let initialCoords = coordinates || this._getInitialCoordinates()
     this.map = new google.maps.Map(this.mapParent, {
-      center: new google.maps.LatLng(28.39404819, -91.38743867),
-      zoom: 8,
+      center: initialCoords,
+      zoom: 12,
     })
     this.placesService = new google.maps.places.PlacesService(this.map)
   }
@@ -40,6 +42,23 @@ class HousesMap {
         })
       )
     })
+  }
+
+  _getInitialCoordinates() {
+    let initialCoords = new google.maps.LatLng(28.39404819, -91.38743867)
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        initialCoords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+        this.initMap(initialCoords)
+      })
+    }
+    return initialCoords
+  }
+
+  _removeMap() {
+    while (this.mapParent.firstChild) {
+      this.mapParent.removeChild(this.mapParent.firstChild)
+    }
   }
 
 }
