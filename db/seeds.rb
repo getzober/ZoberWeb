@@ -16,29 +16,53 @@ yearly = Product.create(title: "yearly plan",
 Topic.create!(name: "spirituality");
 Topic.create!(name: "fitness");
 Admin.create!(email:"tyler@zober.co", password:"Zober2018");
-# image_array = ["https://images.craigslist.org/00n0n_cqc2jLGe1w0_600x450.jpg", "https://images.craigslist.org/00f0f_4lZ6YdfQnnu_600x450.jpg", "https://images.craigslist.org/00s0s_ceOPeAs9f25_600x450.jpg"]
-
-#
-# index = 1
-# 43.times do
-#   image_array.each do |link|
-#     Image.create!({
-#     house_id: index,
-#     image: link
-#   })
-#   end
-# index += 1
-# end
-#
-# filter_id_array = [1, 4, 5, 8, 9, 10, 11, 12, 13, 15, 17, 18, 19, 20, 25, 29, 32, 38, 39, 41, 42, 47, 50, 55, 62, 65, 67, 68]
-#
-# index = 1
-# 43.times do
-#   filter_id_array.each do |filter|
-#     HouseFilter.create!({
-#     house_id: index,
-#     filter_id: filter
-#   })
-#   end
-# index += 1
-# end
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'San Francisco', zip_code: 94016,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 37.7079, longitude: -122.4553,
+               street2: '1', phone: '1234567890', email: 'email@email.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'OR', city: 'Portland', zip_code: 97035,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 45.4128, longitude: -122.727,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'Sacramento', zip_code: 95628,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 38.6544, longitude: -121.2653,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'KY', city: 'Lousville', zip_code: 40018,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 38.232, longitude: -85.4524,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Lousville', zip_code: 80027,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 39.9646, longitude: -105.148,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Boulder', zip_code: 80303,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 40.001, longitude: -105.2284,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Denver', zip_code: 80014,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 39.6637, longitude: -104.8387,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'NY', city: 'New York City', zip_code: 10001,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 40.7483, longitude: -73.9929,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'WA', city: 'Seattle', zip_code: 98101,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 47.6108, longitude: -122.3349,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'Los Angeles', zip_code: 90001,
+               linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+               capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
+               neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 33.974, longitude: -118.2494,
+               street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
