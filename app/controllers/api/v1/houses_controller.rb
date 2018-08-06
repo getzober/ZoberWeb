@@ -17,7 +17,11 @@ class Api::V1::HousesController < ApplicationController
       options = params.permit(:lat, :lng, :distance)
       options[:lat] = options[:lat].to_i
       options[:lng] = options[:lng].to_i
-      options[:distance] = options[:distance].to_i
+      if options[:distance] and options[:distance] > 0
+        options[:distance] = options[:distance].to_i
+      else
+        options[:distance] = 50
+      end
       options
     end
 

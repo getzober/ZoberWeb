@@ -1,6 +1,7 @@
 class HousesMap {
   constructor(params={}) {
     this.mapParent = params.map || document.getElementById('map')
+    this.houses = params.houses
     this.markers = []
     this.map
     this.placesService
@@ -27,16 +28,21 @@ class HousesMap {
         let lat = results[0].geometry.location.lat()
         let lng = results[0].geometry.location.lng()
         let houses = await HousesService.search({ lat, lng })
-        this.placeMarkers(houses)
-        Houses.render(houses)
+        if (houses.data[0]) { 
+          this.placeMarkers(houses.data)
+          this.houses.render(houses.data)
+        } else {
+          alert('no results found')
+        }
       } else {
-        alert('No locations found')
+        alert('no results found')
       }
+    } else { 
+      alert('no results found')
     }
   }
 
   async placeMarkers(houses) {
-    if (!houses) { return }
     houses.forEach((house) => {
       this.markers.push(
         new google.maps.Marker({

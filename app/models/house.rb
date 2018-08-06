@@ -43,21 +43,21 @@ class House < ApplicationRecord
     end
 
     def self.high_lat(lat, distance)
-      lat + (distance / 69)
+      lat.to_f + (distance / 69.0)
     end
 
     def self.low_lat(lat, distance)
-      lat - (distance / 69)
+      lat.to_f - (distance / 69.0)
     end
 
     def self.high_lng(lat, lng, distance)
-      lat_radians = (lat * Math::PI) / 180
-      lng + (distance / (Math.cos(lat_radians) * 69.172))
+      lat_radians = (lat.to_f * Math::PI) / 180
+      lng.to_f + (distance / (Math.cos(lat_radians) * 69.172))
     end
 
     def self.low_lng(lat, lng, distance)
-      lat_radians = (lat * Math::PI) / 180
-      lng - (distance / (Math.cos(lat_radians) * 69.172))
+      lat_radians = (lat.to_f * Math::PI) / 180
+      lng.to_f - (distance / (Math.cos(lat_radians) * 69.172))
     end
 
 end
