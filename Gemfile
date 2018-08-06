@@ -53,6 +53,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :production do
