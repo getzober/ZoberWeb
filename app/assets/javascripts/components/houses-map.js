@@ -28,6 +28,7 @@ class HousesMap {
         let lng = results[0].geometry.location.lng()
         let houses = await HousesService.search({ lat, lng })
         this.placeMarkers(houses)
+        Houses.render(houses)
       } else {
         alert('No locations found')
       }

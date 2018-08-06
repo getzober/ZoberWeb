@@ -22,20 +22,19 @@
       <div id='map'> </div>
     </div>
 
-    <div id='houses'>
-      <% @houses.each do |house| %>
-        <div class='house'>
-          <% binding.pry %>
-          <%= image_tag house.images[0], class: 'house-image', id: "house-#{house.id}" %>
-        </div>
-      <% end %>
-    </div>
-
     <section>
+      <div id='houses'>
+        <% @houses.each do |house| %>
+          <%= link_to house_path(house), class: 'house' do %>
+            <%= image_tag house.images[0] || 'ring3large.png', 
+              class: 'house-image', 
+              id: "house-#{house.id}" 
+            %>
+          <% end %>
+        <% end %>
+      </div>
+
       <%= render "layouts/footer_main" %>
     </section>
-
-      </div>
-    </div>
   </div>
 </body>

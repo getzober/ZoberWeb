@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
   devise_for :controllers
-devise_for :admin, path: 'admin', controllers: {sessions: "admin/sessions", registrations: 'admin/registraions'}
-devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: "users/registrations"}
+  devise_for :admin, path: 'admin', controllers: {sessions: "admin/sessions", registrations: 'admin/registraions'}
+  devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: "users/registrations"}
   get 'sitemap/index'
 
   get 'index' => 'dashboard#index'
 
   devise_for :providers
   devise_scope :provider do
-  get '/providers/:id' => 'providers#show'
-end
+    get '/providers/:id' => 'providers#show'
+  end
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :purchases, only: [:show]
   resources :products, only: [:index, :show]
@@ -19,21 +20,20 @@ end
   resources :charges
 
   resource :home_page, only: [:show]
-  resources :houses, :users, :only => [:new, :create, :index]
+  resources :houses, :users, :only => [:new, :create, :index, :show]
   resources :places, except: [:update, :edit, :destroy]
   resources :blogs do
     resources :comments
-
   end
-get 'blogs/by_year_and_month/:year/:month' => 'blogs#by_year_and_month', :as=> :blogs_by_year_and_month
-match 'sitemap', :to => 'sitemap#index', :via => [:get]
-# match '/providers/:id',     to: 'providers#show',       via: 'get'
-get 'topics/:id' => 'topics#show'
+
+  get 'blogs/by_year_and_month/:year/:month' => 'blogs#by_year_and_month', :as=> :blogs_by_year_and_month
+  match 'sitemap', :to => 'sitemap#index', :via => [:get]
+  get 'topics/:id' => 'topics#show'
   get 'privacy' => 'static#privacy'
   get 'list' => 'houses#list'
   get 'terms'=>'static#terms'
   get 'provider-markers' => 'places#index'
-get 'company' => 'static#company'
+  get 'company' => 'static#company'
   get 'individual' => 'houses#individual'
 
   get 'houses/home'
@@ -52,5 +52,4 @@ get 'company' => 'static#company'
     end
   end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
