@@ -46,6 +46,7 @@ gem 'social-share-button'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "pundit"
+gem 'factory_bot'
 
 group :development, :test do
   gem 'pg'
