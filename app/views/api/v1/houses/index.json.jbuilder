@@ -31,4 +31,4 @@ json.array! @houses.each do |house|
     json.category_id filter.category_id
     json.filter filter.filter
   end
-end 
+end  

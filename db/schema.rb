@@ -143,18 +143,6 @@ ActiveRecord::Schema.define(version: 20180803192349) do
     t.text "bio"
   end
 
-  create_table "houses_insurance_companies", id: false, force: :cascade do |t|
-    t.bigint "insurance_company_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["insurance_company_id", "house_id"], name: "index_insurance_house_on_ins_co_id_and_house_id"
-  end
-
-  create_table "houses_treatments", id: false, force: :cascade do |t|
-    t.bigint "treatment_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["treatment_id", "house_id"], name: "index_houses_treatments_on_treatment_id_and_house_id"
-  end
-
   create_table "images", force: :cascade do |t|
     t.integer "house_id"
     t.string "image"

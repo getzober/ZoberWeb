@@ -12,4 +12,8 @@ class House < ApplicationRecord
   def address
     [street, city, state, "United States"].compact.join(', ')
   end
+
+  def self.search( search = '' )
+    where("city ~* ? OR state ~* ? OR zip_code = ?", search, search, search.to_i ).order("created_at DESC")
+  end
 end

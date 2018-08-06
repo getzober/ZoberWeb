@@ -109,6 +109,3 @@ all_house_seeds.each do |house|
   house.accreditations =      all_accreditation_seeds
   house.insurance_companies = all_insurance_company_seeds
 end
-
-
-
