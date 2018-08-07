@@ -43,14 +43,20 @@ class HousesMap {
   }
 
   async placeMarkers(houses) {
+    let bounds = new google.maps.LatLngBounds()
     houses.forEach((house) => {
-      this.markers.push(
-        new google.maps.Marker({
-          position: {lat: house.latitude, lng: house.longitude},
-          map: this.map,
-        })
-      )
+      let marker = new google.maps.Marker({
+        position: {lat: house.latitude, lng: house.longitude},
+        map: this.map,
+        //icon: 'home.png'
+      })
+
+      this._setMarkerEventListener(marker, house)
+      bounds.extend(marker.position)
+      this.markers.push(marker)
     })
+    this.map.fitBounds(bounds)
+    this.map.setZoom(11)
   }
 
   _getInitialCoordinates() {
@@ -68,6 +74,49 @@ class HousesMap {
     while (this.mapParent.firstChild) {
       this.mapParent.removeChild(this.mapParent.firstChild)
     }
+  }
+
+  _setMarkerEventListener(marker, house) {
+    let infoWindow = this._setInfoWindow(house)
+    let mouseover = marker.addListener('mouseover', () => {
+      if (infoWindow) {
+        infoWindow.open(this.map, marker)
+      }
+    })
+    let mouseout = marker.addListener('mouseout', () => {
+      if (infoWindow) {
+        infoWindow.close(this.map, marker)
+      }
+    })
+    marker.addListener('click', () => {
+      if (infoWindow) {
+        google.maps.event.removeListener(mouseout)
+        google.maps.event.removeListener(mouseover)
+        infoWindow.open(this.map, marker)
+        this.map.setZoom(15)
+      }
+    })
+  }
+
+  _setInfoWindow(house) {
+    let contentString = `
+        <div class='house-marker'>
+          <div>
+            <p class='house-marker-title'>
+              ${house.name}
+            </p>
+            <p class='house-marker-description'>
+              ${house.property_description}
+            </p> 
+          </div>
+      `
+    house.images.forEach((image) => {
+      contentString += `
+        <img class='house-marker-image' src=${image}>
+      `
+      contentString += '</div>'
+    })
+    return new google.maps.InfoWindow({ content: contentString})
   }
 
 }
