@@ -13,12 +13,16 @@
 }
 
 #map-area {
+  z-index: -1;
+  position: relative;
   width: 100%;
   height: 100vh;
   display: static;
 }
 
 #map {
+  z-index: -1; 
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -26,6 +30,11 @@
 #filters {
   position: absolute;
   top: 40%;
+}
+
+#houses-list {
+  position: relative;
+  z-index: 9999999;
 }
 
 .house-marker {
@@ -52,6 +61,7 @@
 }
 
 .filter {
+  z-index: 999999999;
   @include filter;
   background-color: black;
   border-color: white;
@@ -74,6 +84,7 @@
 
 .filter-selections {
   width: 100%;
+  z-index: 9999999999;
 }
 
 .filter-selection-title {
@@ -104,6 +115,7 @@ menu {
 .col-sm-12.mx-auto {margin-top:200px;}
 
 .app-wrapper {
+  z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
