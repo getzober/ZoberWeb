@@ -17,7 +17,7 @@ development:
 
 test:
   adapter: postgresql
-  encoding: unicode3
+  encoding: unicode
   database: myapp_test
   pool: 5
 
