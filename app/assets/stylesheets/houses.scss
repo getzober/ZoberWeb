@@ -59,15 +59,9 @@
   width: 100%;
 }
 
-.filter-selection {
+.filter-selection-title {
   font-size: 13px;
-  position: relative;
-}
-
-.filter-selection-active {
-  font-size: 13px;
-  background-color: lightblue;
-  color: white;
+  text-align: left;
 }
 
 .selected {

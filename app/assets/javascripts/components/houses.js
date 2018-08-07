@@ -4,7 +4,6 @@ class Houses {
   }
 
   render(houses) {
-    if (!houses) { return }
     this._removeHouses()    
     for (let i = 0; i < houses.length; i++) {
       let house = document.createElement('A')
