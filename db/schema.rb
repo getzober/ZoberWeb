@@ -216,6 +216,13 @@ ActiveRecord::Schema.define(version: 20180731220558) do
     t.string "uuid"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "full_name"
+    t.string "abbreviation"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "image"
