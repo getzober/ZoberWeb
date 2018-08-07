@@ -26,10 +26,10 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-    @filter_array = @house.filters.each do |filter|
-      filter
-    end
-    @categories = Category.all
+    # @filter_array = @house.filters.each do |filter|
+    #   filter
+    # end
+    # @categories = Category.all
   end
 
 
