@@ -18,7 +18,7 @@ Topic.create!(name: "fitness");
 Admin.create!(email:"tyler@zober.co", password:"Zober2018");
 
 san_francisco_house = House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'San Francisco', zip_code: 94016,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 37.7079, longitude: -122.4553,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -26,7 +26,7 @@ san_francisco_house = House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 portland_house =      House.create!( name: 'House of Soberness', street: 'Haight St', state: 'OR', city: 'Portland', zip_code: 97035,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 45.4128, longitude: -122.727,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -34,7 +34,7 @@ portland_house =      House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 sacramento_house =    House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'Sacramento', zip_code: 95628,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 38.6544, longitude: -121.2653,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -42,7 +42,7 @@ sacramento_house =    House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 louisville_ky_house = House.create!( name: 'House of Soberness', street: 'Haight St', state: 'KY', city: 'Lousville', zip_code: 40018,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 38.232, longitude: -85.4524,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -50,7 +50,7 @@ louisville_ky_house = House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 louisville_co_house = House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Lousville', zip_code: 80027,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 39.9646, longitude: -105.148,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -58,7 +58,7 @@ louisville_co_house = House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 boulder_house =       House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Boulder', zip_code: 80303,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 40.001, longitude: -105.2284,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -66,7 +66,7 @@ boulder_house =       House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 denver_house =        House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Denver', zip_code: 80014,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 39.6637, longitude: -104.8387,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -74,7 +74,7 @@ denver_house =        House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 nyc_house =           House.create!( name: 'House of Soberness', street: 'Haight St', state: 'NY', city: 'New York City', zip_code: 10001,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 40.7483, longitude: -73.9929,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -82,7 +82,7 @@ nyc_house =           House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 seattle_house =       House.create!( name: 'House of Soberness', street: 'Haight St', state: 'WA', city: 'Seattle', zip_code: 98101,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 47.6108, longitude: -122.3349,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
@@ -90,7 +90,7 @@ seattle_house =       House.create!( name: 'House of Soberness', street: 'Haight
                                      house_type: 'Residential', number_of_diagnoses: 2, electronics: 'Allowed on weekends',
                                      smoking: false, gender: 'Coed', room_type: 'Private and semi-private', recovery_plan: 'Traditional | 12 step' )
 los_angeles_house =   House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'Los Angeles', zip_code: 90001,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
                                      capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
                                      neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 33.974, longitude: -118.2494,
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
