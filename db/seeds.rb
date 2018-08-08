@@ -103,9 +103,31 @@ horace_mann = InsuranceCompany.create!( name: "Horace Man Educators Corp." )
 
 all_insurance_company_seeds = [ aetna, am_fam_ins, amerigroup, caresource, horace_mann ]
 
-all_house_seeds.each do |house|
+image_seeds = %w( http://www.rosecrance.org/wp-content/uploads/2015/12/Rosecrance_8_28_15_02687-1200x800_c.jpg
+                  http://vannessrecoveryhouse.com/wp-content/uploads/2017/02/cropped-vannessrecoveryhouse-back.jpg
+                  https://www.addictionpro.com/sites/addictionpro.com/files/archive/www.addictionpro.com/Media/Cortlandmuralweb.jpg
+                  http://elsagiraldospa.com/wp-content/uploads/2016/10/recovery.jpg
+                  https://detoxtorehab.com/wp-content/uploads/2016/11/Charlestown-Recovery-House.jpg
+                  http://enfieldrecoveryhouse.com/yahoo_site_admin/assets/images/houseangle_2.28453916_std.JPG
+                  http://rehabreviews.com/wp-content/uploads/2015/07/Choices-Recovery-House.png
+                  http://incentivesrecoveryhouse.com/wp-content/uploads/2010/03/exterior-palomar.jpg
+                  https://aptsumo-s3.s3.amazonaws.com/pictures/data/000/004/285/original/3909abbb-cd35-459a-8e72-fdab48db8d21.jpg?1515649894
+                  https://i.ytimg.com/vi/J8rwk8Znd8c/maxresdefault.jpg
+                  https://westorlandonews.com/wp-content/uploads/2013/10/RH200final.jpg
+                  http://farm9.staticflickr.com/8023/7587287480_26581b13df_b.jpg
+                  http://vannessrecoveryhouse.com/wp-content/uploads/2017/02/vannessrecoveryhouse-room2.jpg
+                  http://www.mainlinerecovery.com/wp-content/uploads/providence-recovery-residence-ext.jpg
+                  http://vannessrecoveryhouse.com/wp-content/uploads/2017/02/cropped-vannessrecoveryhouse-pool.jpg
+                  https://bloximages.newyork1.vip.townnews.com/lancasteronline.com/content/tncms/assets/v3/editorial/2/00/200c1e68-dac9-11e3-8a8b-0017a43b2370/53725f2749fcf.image.jpg
+                  https://aptsumo-s3.s3.amazonaws.com/pictures/data/000/004/299/original/2647ef1b-0e66-4741-bc40-e2b0eaf9273b.jpg?1515650657
+                  https://independencerecovery.com/illpress/wp-content/uploads/2015/01/Indepdence-Sober-Living-Recovery-House-Outside-1024x1024.jpg
+                  https://aff.bstatic.com/images/hotel/840x460/105/105709604.jpg
+                  http://jcsrecoveryhouse.com/wp-content/uploads/2013/04/img_slide05-1024x629.jpg )
+
+all_house_seeds.each_with_index do |house, index|
   house.treatments =          all_treatment_seeds
   house.amenities =           all_amenity_seeds
   house.accreditations =      all_accreditation_seeds
   house.insurance_companies = all_insurance_company_seeds
+  house.images.create( image: image_seeds[index] )
 end
