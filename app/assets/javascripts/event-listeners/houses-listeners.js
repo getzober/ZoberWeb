@@ -1,8 +1,11 @@
 class HousesListeners {
   constructor() {
     this.houses = new Houses()
-    this.housesMap = new HousesMap({ houses: this.houses })
     this.housesFilters = new HousesFilters()
+    this.housesMap = new HousesMap({ 
+      houses: this.houses, 
+      housesFilters: this.housesFilters,
+    })
     this.$filters = document.getElementById('filters')
     this.housesMap.initMap()
   }
@@ -12,7 +15,7 @@ class HousesListeners {
       let key = event.which || event.keyCode
       if (key === 13) {
         let $query = document.getElementById('search-value').value
-        this.housesMap.query($query)
+        this.housesMap.query($query, this.housesFilters.selections)
       }
     })
   }

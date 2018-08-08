@@ -2,6 +2,7 @@ class HousesMap {
   constructor(params={}) {
     this.mapParent = params.map || document.getElementById('map')
     this.houses = params.houses
+    this.housesFilters = params.housesFilters
     this.markers = []
     this.map
     this.placesService
@@ -28,6 +29,7 @@ class HousesMap {
         let lat = results[0].geometry.location.lat()
         let lng = results[0].geometry.location.lng()
         let houses = await HousesService.search({ lat, lng })
+        houses = this.housesFilters.filter(houses)
         if (houses.data[0]) { 
           this.placeMarkers(houses.data)
           this.houses.render(houses.data)

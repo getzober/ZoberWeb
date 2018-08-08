@@ -13,6 +13,11 @@ class HousesFilters {
     }
   }
 
+  filter(houses) {
+    // filter houses by selections
+    return(houses)
+  }
+
   showPriceLow() {
     this.byHighPrice = false
     document.getElementById('price-high').classList.remove('filter-active')
@@ -108,6 +113,10 @@ class HousesFilters {
     checkbox.type = 'checkbox'
     checkbox.name = content
     checkbox.value = content
+    let key = this._formatKey(filterName)
+    if (this.selections[key].includes(content)) {
+      checkbox.checked = true
+    }
     option.textContent = content
     option.value = content
     option.appendChild(checkbox)
