@@ -25,21 +25,31 @@
     <div class="row">
       <div class="col-xs-12 col-lg-6">
         <div class="house-details">
-          <h3 class="title"> <%=@house.name%> </h3>
-          <h5 class="description"> <%=@house.property_description%> in <%=@house.city%>. </h5>
-          <p> Price: <%= number_to_currency(@house.price)%> / Deposit: <%=number_to_currency(@house.deposit)%> </p>
-          <p> Neighborhood: <%=@house.neighborhood%> </p>
-          <p> Capacity: <%=@house.capacity%> </p>
-          <p> <%= @house.bio %> </p>
-
-
+          <div>
+            <h3 class="title"> <%=@house.name%> </h3>
+          </div>
+          <div>
+            <h5><%=@house.city + ', ' + @house.state %></h5>
+          </div>
+          <div>
+            <%= @house.bio %>
+          </div>
         </div>
       </div>
 
       <div>
-        <h1>at a glance</h1>
+        <h1>At a glance</h1>
         <ul>
-          <li></li>
+          <li><%= @house.house_type %></li>
+          <li><%= @house.neighborhood %> neighborhood</li>
+          <li><%= @house.recovery_plan %></li>
+          <li><%= @house.diagnosis_description %></li>
+          <li><%= @house.gender %></li>
+          <li><%= @house.capacity %> beds</li>
+          <li><%= @house.room_type %> rooms</li>
+          <li><%= @house.electronics %></li>
+          <li><%= @house.smoking_policy %></li>
+<!--          <li><%#= @house. %></li>-->
         </ul>
       </div>
 

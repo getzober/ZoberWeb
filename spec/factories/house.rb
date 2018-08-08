@@ -15,7 +15,7 @@ FactoryBot.define do
     price 5000.00
     deposit 5000.00
     property_description "A cool place for cool people"
-    neighborhood "The best one"
+    neighborhood "Urban"
     curfew "10 PM"
     overnight_passes "Twice per month"
     latitude 37.7079
@@ -24,10 +24,11 @@ FactoryBot.define do
     phone "1234567890"
     bio "Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since."
     house_type "Detox and residential"
-    number_of_diagnoses 2
+    number_of_diagnoses 1
     electronics false
     smoking "Only in designated outdoor areas"
     gender "Co-ed"
     room_type "Private and semi-private"
+    recovery_plan "Traditional | 12 step"
   end
 end
