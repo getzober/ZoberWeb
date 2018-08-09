@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808164158) do
+ActiveRecord::Schema.define(version: 20180809190625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "accreditations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "accreditations_houses", id: false, force: :cascade do |t|
-    t.bigint "accreditation_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["accreditation_id", "house_id"], name: "index_accreditations_houses_on_accreditation_id_and_house_id"
-  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,18 +28,6 @@ ActiveRecord::Schema.define(version: 20180808164158) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "amenities", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "amenities_houses", id: false, force: :cascade do |t|
-    t.bigint "amenity_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["amenity_id", "house_id"], name: "index_amenities_houses_on_amenity_id_and_house_id"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -141,36 +117,11 @@ ActiveRecord::Schema.define(version: 20180808164158) do
     t.string "street2"
     t.string "phone"
     t.text "bio"
-    t.string "house_type"
-    t.integer "number_of_diagnoses"
-    t.string "electronics"
-    t.boolean "smoking"
-    t.string "gender"
-    t.string "room_type"
-    t.string "recovery_plan"
-  end
-
-  create_table "houses_insurance_companies", id: false, force: :cascade do |t|
-    t.bigint "insurance_company_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["insurance_company_id", "house_id"], name: "index_insurance_house_on_ins_co_id_and_house_id"
-  end
-
-  create_table "houses_treatments", id: false, force: :cascade do |t|
-    t.bigint "treatment_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["treatment_id", "house_id"], name: "index_houses_treatments_on_treatment_id_and_house_id"
   end
 
   create_table "images", force: :cascade do |t|
     t.integer "house_id"
     t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "insurance_companies", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -239,13 +190,6 @@ ActiveRecord::Schema.define(version: 20180808164158) do
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "treatments", force: :cascade do |t|
-    t.string "name"
-    t.integer "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
