@@ -110,4 +110,21 @@ filters.each{ |filter| category_seeds[filter[0].to_i].filters.create( filter:fil
 
 house_seeds.each_with_index do |house, index|
   house.images.create( image: image_seeds[index] )
+  house.filters = [ Category.find_by( category: 'Age Group' ).filters.first ] +
+                  Category.find_by( category: 'Amenities' ).filters.all +
+                  [ Category.find_by( category: 'Food' ).filters.first ] +
+                  [ Category.find_by( category: 'Gender' ).filters.first ] +
+                  Category.find_by( category: 'Insurance Accepted' ).filters.all +
+                  Category.find_by( category: 'License/Certification/Accreditation' ).filters.all +
+                  [ Category.find_by( category: 'Payment Assistance' ).filters.first ] +
+                  Category.find_by( category: 'Treatment Approach' ).filters.all +
+                  Category.find_by( category: 'Opoid Treatment' ).filters.all +
+                  Category.find_by( category: 'Special Program' ).filters.all +
+                  Category.find_by( category: 'Alternative Therapy' ).filters.all +
+                  [ Category.find_by( category: 'Pet Policy' ).filters.fourth ] +
+                  [ Category.find_by( category: 'Smoking Policy' ).filters.first ] +
+                  [ Category.find_by( category: 'Neighborhood Type' ).filters.first ] +
+                  [ Category.find_by( category: 'Recovery Plan' ).filters.first ] +
+                  [ Category.find_by( category: 'Number Of Diagnoses' ).filters.second ] +
+                  Category.find_by( category: 'House Type' ).filters.all
 end
