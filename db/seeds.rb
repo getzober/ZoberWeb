@@ -78,7 +78,7 @@ los_angeles_house =   House.create!( name: 'House of Soberness', street: 'Haight
                                      street2: '1', phone: '1234567890', email: 'email@email.com',
                                      bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 
-all_house_seeds = [ san_francisco_house, portland_house, sacramento_house, louisville_ky_house, louisville_co_house,
+house_seeds = [ san_francisco_house, portland_house, sacramento_house, louisville_ky_house, louisville_co_house,
                     boulder_house, denver_house, nyc_house, seattle_house, los_angeles_house ]
 
 image_seeds = %w( http://www.rosecrance.org/wp-content/uploads/2015/12/Rosecrance_8_28_15_02687-1200x800_c.jpg
@@ -102,6 +102,12 @@ image_seeds = %w( http://www.rosecrance.org/wp-content/uploads/2015/12/Rosecranc
                   https://aff.bstatic.com/images/hotel/840x460/105/105709604.jpg
                   http://jcsrecoveryhouse.com/wp-content/uploads/2013/04/img_slide05-1024x629.jpg )
 
-all_house_seeds.each_with_index do |house, index|
+categories = File.readlines( 'categories.csv' ).map{ |line| line.chomp }
+category_seeds = ["dummuy 0'th entry"] + categories.map{ |category| Category.create!( category: category ) }
+
+filters =   File.readlines( 'filters.csv' ).map{ |line| line.chomp.split( ',' ) }
+filters.each{ |filter| category_seeds[filter[0].to_i].filters.create( filter:filter[1] ) }
+
+house_seeds.each_with_index do |house, index|
   house.images.create( image: image_seeds[index] )
 end
