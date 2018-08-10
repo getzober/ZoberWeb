@@ -14,12 +14,12 @@ RSpec.describe House, type: :model do
 
     it "returns a single finlter if house has exactly one filter in the specified category" do
       house_1.filters << filter_1
-      expect( house_1.filters_with_category( category_2.category ) ).to eq( filter_1 )
+      expect( house_1.filters_with_category( category_2.category ) ).to eq( filter_1.filter )
     end
 
     it "returns an array of filters if house has more than one filter in the specified category" do
       house_1.filters = [filter_2, filter_3]
-      expect( house_1.filters_with_category( category_3.category ) ).to eq( [filter_2, filter_3] )
+      expect( house_1.filters_with_category( category_3.category ) ).to eq( [filter_2.filter, filter_3.filter] )
     end
   end
 end

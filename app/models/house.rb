@@ -20,9 +20,9 @@ class House < ApplicationRecord
     if filters_to_return.empty?
       false
     elsif filters_to_return.count > 1
-      filters_to_return.all
+      filters_to_return.all.map( &:filter )
     else
-      filters_to_return.first
+      filters_to_return.first.filter
     end
   end
 end
