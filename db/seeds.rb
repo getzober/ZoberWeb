@@ -109,7 +109,7 @@ filters =   File.readlines( 'filters.csv' ).map{ |line| line.chomp.split( ',' ) 
 filters.each{ |filter| category_seeds[filter[0].to_i].filters.create( filter:filter[1] ) }
 
 house_seeds.each_with_index do |house, index|
-  house.images.create( image: image_seeds[index] )
+  house.images.create!( image: image_seeds[index] )
   house.filters = [ Category.find_by( category: 'Age Group' ).filters.first ] +
                   Category.find_by( category: 'Amenity' ).filters.all +
                   [ Category.find_by( category: 'Food' ).filters.first ] +
@@ -118,7 +118,7 @@ house_seeds.each_with_index do |house, index|
                   Category.find_by( category: 'License/Certification/Accreditation' ).filters.all +
                   [ Category.find_by( category: 'Payment Assistance' ).filters.first ] +
                   Category.find_by( category: 'Treatment Approach' ).filters.all +
-                  Category.find_by( category: 'Opoid Treatment' ).filters.all +
+                  Category.find_by( category: 'Opioid Treatment' ).filters.all +
                   Category.find_by( category: 'Special Program' ).filters.all +
                   Category.find_by( category: 'Alternative Therapy' ).filters.all +
                   [ Category.find_by( category: 'Pet' ).filters.fourth ] +
@@ -126,5 +126,7 @@ house_seeds.each_with_index do |house, index|
                   [ Category.find_by( category: 'Neighborhood Type' ).filters.first ] +
                   [ Category.find_by( category: 'Recovery Plan' ).filters.first ] +
                   [ Category.find_by( category: 'Number Of Diagnoses' ).filters.second ] +
-                  Category.find_by( category: 'House Type' ).filters.all
+                  Category.find_by( category: 'House Type' ).filters.all +
+                  Category.find_by( category: 'Room Type' ).filters.all +
+                  [ Category.find_by( category: 'Electronics Policy' ).filters.first ]
 end
