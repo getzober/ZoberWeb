@@ -49,6 +49,7 @@ gem "pundit"
 
 group :development, :test do
   gem 'pg'
+  gem 'pry-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
   gem 'capybara', '~> 2.13'

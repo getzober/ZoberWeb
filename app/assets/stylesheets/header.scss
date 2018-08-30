@@ -1,12 +1,37 @@
-
 nav {
   background-color:#000000;
-
-
 }
+
+#main-icon {
+  width: 7%;
+}
+
+#searchbar {
+  width: 50%;
+  padding-right: 10px;
+}
+
+#search-value {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-color: white;
+  border-style: solid;
+  border-radius: 0px;
+  border-width: 0px 0px 0.5px 0px;
+}
+
 #secondNav {
   background-color:#000000;
 }
+
+#header-items {
+}
+
+.header-item {
+  padding: 1em;
+}
+
 // .nav-link .js-scroll-trigger {
 //   color: white;
 // }

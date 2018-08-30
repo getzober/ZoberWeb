@@ -1,19 +1,112 @@
-// Place all the styles related to the houses controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin filter {
+  font-size: 13px;
+  border-style: solid;
+  border-radius: 20;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
 #secondNav {
   background-color:#ef8b3e;
 }
 
-// houses index/list
+#map-area {
+  z-index: -1;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: static;
+}
+
+#map {
+  z-index: -1; 
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#filters {
+  position: absolute;
+  top: 40%;
+}
+
+#houses-list {
+  position: relative;
+  z-index: 9999999;
+}
+
+.house-marker {
+
+}
+
+.house-marker-title {
+  
+}
+
+.house-marker-description {
+  font-size: 10px;
+}
+
+.house-marker-image {
+  height: 50px;
+  width: 50px;
+}
+
+.house-image {
+  background-color: grey;
+  height: 200px;
+  width: 200px;
+}
+
+.filter {
+  z-index: 999999999;
+  @include filter;
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+.filter:hover {
+  @include filter;
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.filter-active {
+  @include filter;
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+.filter-selections {
+  width: 100%;
+  z-index: 9999999999;
+}
+
+.filter-selection-title {
+  font-size: 13px;
+  text-align: left;
+}
+
+.selected {
+  background-color: blue;
+}
+
+.selected:hover {
+  background-color: blue;
+}
 
 menu {
   width: 100%;
-  height: 50px;
+  height: 57px;
   background-color: #000000;
   background-size:100% 100%;
   position: fixed;
-  top: 60px;
+  top: 56px;
   .nav {
     padding-top: 15px;
   }
@@ -22,25 +115,11 @@ menu {
 .col-sm-12.mx-auto {margin-top:200px;}
 
 .app-wrapper {
+  z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 130px;
-}
-
-#map-area {
-  width: calc(100% - 800px);
-  height: 100vh;
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-}
-
-.houses_list {
-  overflow:hidden;
-  margin:0;
 }
 
 .info-price {
@@ -107,13 +186,6 @@ menu {
   color: white;
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
-}
-
-#amenities {
-  font-size: 25px;
-  margin: 0px;
-  padding: 0px;
-  color: #626262;
 }
 
 #icons8 {

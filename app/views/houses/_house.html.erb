@@ -1,0 +1,6 @@
+<%= link_to house_path(house), class: 'house' do %>
+  <%= image_tag house.images[0] || 'ring3large.png', 
+    class: 'house-image', 
+    id: "house-#{house.id}"
+  %>
+<% end %>

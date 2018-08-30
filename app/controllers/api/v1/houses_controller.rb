@@ -1,12 +1,7 @@
 class Api::V1::HousesController < ApplicationController
-  before_action :parse_search_terms, only: [:index]
 
   def index
-    if @search_terms
-      @houses = @search_terms.map{|term| House.search( term ) }.flatten.uniq
-    else
-      @houses = House.all
-    end
+    @houses = House.search(search_params)
     render 'index.json.jbuilder'
   end 
 
@@ -18,11 +13,16 @@ class Api::V1::HousesController < ApplicationController
 
   private
 
-    def parse_search_terms
-      if params[:search]
-        delimiters = [',', ' ', "'"]
-        @search_terms = params[:search].split(Regexp.union(delimiters))
+    def search_params
+      options = params.permit(:lat, :lng, :distance)
+      options[:lat] = options[:lat].to_i
+      options[:lng] = options[:lng].to_i
+      if options[:distance] and options[:distance] > 0
+        options[:distance] = options[:distance].to_i
+      else
+        options[:distance] = 50
       end
+      options
     end
 
 end
