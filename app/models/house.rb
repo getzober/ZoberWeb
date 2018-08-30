@@ -2,7 +2,7 @@ class House < ApplicationRecord
   has_many :images
   has_many :house_filters
   has_many :filters, through: :house_filters
-  belongs_to :provider, optional: true
+  #belongs_to :provider, optional: true
   geocoded_by :address
   
   def address
@@ -31,6 +31,7 @@ class House < ApplicationRecord
     end
   end
   
+  enum role: [:sober_living, :treatment_center]
   private
     
     def self.houses_within_range(lat, lng, distance)
