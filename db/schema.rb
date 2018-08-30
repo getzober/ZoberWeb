@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180830212411) do
+ActiveRecord::Schema.define(version: 20180830213308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,11 +135,26 @@ ActiveRecord::Schema.define(version: 20180830212411) do
     t.string "uuid"
   end
 
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_roles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_user_roles_on_role_id"
+    t.index ["user_id"], name: "index_user_roles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -167,4 +182,6 @@ ActiveRecord::Schema.define(version: 20180830212411) do
   add_foreign_key "blogs", "topics"
   add_foreign_key "house_amenities", "amenities"
   add_foreign_key "house_amenities", "houses"
+  add_foreign_key "user_roles", "roles"
+  add_foreign_key "user_roles", "users"
 end
