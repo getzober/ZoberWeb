@@ -16,93 +16,153 @@
     </div>
     <% @house.images.each do |image| %>
       <div>
-        <img src=<%=image.image%> >
+        <img src="<%=image.image%>" />
       </div>
     <% end %>
   </div>
 
   <div class="container-fluid">
-    <div class="row">
+    <div>
       <div class="col-xs-12 col-lg-6">
         <div class="house-details">
-          <h3 class="title"> <%=@house.name%> </h3>
-          <h5 class="description"> <%=@house.property_description%> in <%=@house.city%>. </h5>
-          <p> Price: <%= number_to_currency(@house.price)%> / Deposit: <%=number_to_currency(@house.deposit)%> </p>
-          <p> Neighborhood: <%=@house.neighborhood%> </p>
-          <p> Capacity: <%=@house.capacity%> </p>
-          <p> <%= @house.bio %> </p>
-
-          <ul class= "amenity-list">
-            <% @categories.each do |category| %>
-              <% category.filters.each do |filter| %>
-                <% if @filter_array.include?(filter) %>
-
-                  <% if filter.filter == "Dogs" %>
-                    <li> <i id="amenities" class="fa fa-paw"></i> Dogs Allowed </li>
-
-                  <% elsif filter.filter == "Coffee Provided" %> 
-                    <li> <i id="amenities" class="fa fa-coffee"></i> Free Coffee </li> 
- 
-                  <% elsif filter.filter == "Air Conditioning" %>
-                    <li> <i id="amenities" class="fa fa-snowflake-o"></i> AC </li>
-
-                  <% elsif filter.filter == "Heat" %>
-                    <li> <i id="amenities" class="fa fa-thermometer-three-quarters"></i> Heat </li>
-
-                  <% elsif filter.filter == "Parking" %>
-                    <li> <i id="amenities" class="fa fa-car"></i> Parking </li>
-
-                  <% elsif filter.filter == "Commercial Insurance" %>
-                    <li> <i id="amenities" class="fa fa-id-card-o"></i> Insurance Accepted</li>
-
-                  <% elsif filter.filter == "Internet (wi-fi)" %>
-                    <li> <i id="amenities" class="fa fa-wifi" ></i> Wi-Fi </li>
-
-                  <% elsif filter.filter == "Television" %>
-                    <li> <i id="amenities" class="fa fa-television" ></i> TV </li>
-
-                  <% end %>
-
-                <% end %>
-              <% end %>
-            <% end %>
-          </ul>
-
-          <p>
-            <a class="btn" data-toggle="collapse" data-target="#viewdetails">See all details </a>
-          </p>
-
-          <ul class= "amenity-list collapse" id="viewdetails">
-
-            <% @categories.each do |category| %>
-              <h5> <%= category.category %> </h5>
-              <% category.filters.each do |filter| %>
-                <% if @filter_array.include?(filter) %>
-                  <p> <%= filter.filter %> </p>
-                <% end %>
-              <% end %>
-            <% end %>
-          </ul>
+          <div>
+            <h3 class="title"> <%=@house.name%> </h3>
+          </div>
+          <div>
+            <h5><%=@house.city + ', ' + @house.state %></h5>
+          </div>
+          <div>
+            <%= @house.bio %>
+          </div>
         </div>
       </div>
-      <div class="col-xs-4 col-lg-4">
-        <div class = "contact-card">
-          <div class="card text-center">
-            <div class="card-header">
-              Contact this Zober Listing:
-            </div>
-            <div class="card-block">
-              <h4 class="card-title call">Email: <%=@house.email %> </h4>
-              <h4 class="card-title call">Phone: <%=@house.phone %> </h4>
-              <a class="house-website" href=<%=@house.website%>>  <h4 class="card-title call"> Website </h4> </a> 
-            </div>
-            <div class="card-footer end">
-              <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>
-            </div>
-          </div>
+
+      <div>
+        <h1>Amenities</h1>
+        <ul>
+          <% @house.filters_with_category( "Amenity" ).each do |amenity| %>
+            <li><%= amenity %></li>
+          <% end %>
+        </ul>
       </div>
+
+      <div>
+        <h1>Sample Weekly Schedule</h1>
+      </div>
+
+      <div>
+        <h1>Key Staff</h1>
+      </div>
+
+      <div>
+        <h1>Accreditations</h1>
+        <ul>
+          <% @house.filters_with_category( "License/Certification/Accreditation" ).each do |accreditation| %>
+            <li><%= accreditation %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Financials</h1>
+        <p>Monthly Self Pay Rate: <%= number_to_currency( @house.price ) %></p>
+        <p>
+          In Network Insurances Accepted:
+          <ul>
+            <% @house.filters_with_category( "Insurance Accepted" ).each do |insurance| %>
+              <li><%= insurance %></li>
+            <% end %>
+          </ul>
+        </p>
+        <p>
+          Payment Assistance:
+          <ul>
+            <li><%= @house.filters_with_category( "Payment Assistance" ) %></li>
+          </ul>
+        </p>
+      </div>
+
+      <div>
+        <h1>Rules And Policies</h1>
+      </div>
+
+      <div>
+        <h1>Location</h1>
       </div>
     </div>
+
+    <div>
+      <div>
+        <h1>At A Glance</h1>
+        <ul>
+          <li><%= @house.filters_with_category( "House Type" ).join( ' + ' ) %></li>
+          <li><%= @house.filters_with_category( "Neighborhood Type" ) %></li>
+          <li><%= @house.filters_with_category( "Recovery Plan" ) %></li>
+          <li><%= @house.filters_with_category( "Number Of Diagnoses" ) %></li>
+          <li><%= @house.filters_with_category( "Gender" ) %></li>
+          <li><%= @house.capacity %> Beds</li>
+          <li><%= @house.filters_with_category( "Room Type" ).join( ' + ' ) %> Rooms</li>
+          <li><%= @house.filters_with_category( "Electronics Policy" ) %></li>
+          <li><%= @house.filters_with_category( "Smoking Policy" ) %></li>
+          <li><%= @house.filters_with_category( "Pet" ) %></li>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Treatment Approaches</h1>
+        <ul>
+          <% @house.filters_with_category( "Treatment Approach" ).each do |insurance| %>
+            <li><%= insurance %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Opioid Treatment</h1>
+        <ul>
+          <% @house.filters_with_category( "Opioid Treatment" ).each do |insurance| %>
+            <li><%= insurance %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Special Programs</h1>
+        <ul>
+          <% @house.filters_with_category( "Special Program" ).each do |insurance| %>
+            <li><%= insurance %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Alternative Therapies</h1>
+        <ul>
+          <% @house.filters_with_category( "Alternative Therapy" ).each do |insurance| %>
+            <li><%= insurance %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div>
+        <h1>Contact Info</h1>
+        <p><%= @house.address %></p>
+        <p><a href=<%= @house.website %>>Website</a></p>
+        <p><%= @house.phone %></p>
+      </div>
+
+      <p>
+        <h1>Social Links</h1>
+        <p></p><a href=<%= @house.facebook %>>Facebook</a></p>
+        <p><a href=<%= @house.twitter %>>Twitter</a></p>
+        <p><a href=<%= @house.instagram %>>Instagram</a></p>
+        <p><a href=<%= @house.linkedin %>>LinkedIn</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h1>Other Locations By This Provider</h1>
   </div>
 </section>
 

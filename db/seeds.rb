@@ -18,90 +18,68 @@ Topic.create!(name: "fitness");
 Admin.create!(email:"tyler@zober.co", password:"Zober2018");
 
 san_francisco_house = House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'San Francisco', zip_code: 94016,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 37.7079, longitude: -122.4553,
-                                     street2: '1', phone: '1234567890', email: 'email@email.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 37.7079, longitude: -122.4553,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 portland_house =      House.create!( name: 'House of Soberness', street: 'Haight St', state: 'OR', city: 'Portland', zip_code: 97035,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 45.4128, longitude: -122.727,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 45.4128, longitude: -122.727,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 sacramento_house =    House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'Sacramento', zip_code: 95628,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 38.6544, longitude: -121.2653,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 38.6544, longitude: -121.2653,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 louisville_ky_house = House.create!( name: 'House of Soberness', street: 'Haight St', state: 'KY', city: 'Lousville', zip_code: 40018,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 38.232, longitude: -85.4524,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 38.232, longitude: -85.4524,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 louisville_co_house = House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Lousville', zip_code: 80027,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 39.9646, longitude: -105.148,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 39.9646, longitude: -105.148,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 boulder_house =       House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Boulder', zip_code: 80303,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 40.001, longitude: -105.2284,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 40.001, longitude: -105.2284,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 denver_house =        House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CO', city: 'Denver', zip_code: 80014,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 39.6637, longitude: -104.8387,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 39.6637, longitude: -104.8387,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 nyc_house =           House.create!( name: 'House of Soberness', street: 'Haight St', state: 'NY', city: 'New York City', zip_code: 10001,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 40.7483, longitude: -73.9929,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 40.7483, longitude: -73.9929,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 seattle_house =       House.create!( name: 'House of Soberness', street: 'Haight St', state: 'WA', city: 'Seattle', zip_code: 98101,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 47.6108, longitude: -122.3349,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 47.6108, longitude: -122.3349,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 los_angeles_house =   House.create!( name: 'House of Soberness', street: 'Haight St', state: 'CA', city: 'Los Angeles', zip_code: 90001,
-                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'houseofsoberness.com',
-                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'Description.',
-                                     neighborhood: 'The best one', curfew: '6 PM', overnight_passes: 'None', latitude: 33.974, longitude: -118.2494,
-                                     street2: '1', phone: '1234567890', email: 'info@soberhouse.com' )
+                                     linkedin: 'houseofsoberness', twitter: 'houseofsoberness', website: 'http://www.houseofsoberness.com',
+                                     capacity: 90, price: 3000, deposit: 3000, property_description: 'A caring house',
+                                     neighborhood: 'Urban', curfew: '6 PM', overnight_passes: 'None', latitude: 33.974, longitude: -118.2494,
+                                     street2: '1', phone: '1234567890', email: 'email@email.com',
+                                     bio: 'Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since.' )
 
-all_house_seeds = [ san_francisco_house, portland_house, sacramento_house, louisville_ky_house, louisville_co_house,
+house_seeds = [ san_francisco_house, portland_house, sacramento_house, louisville_ky_house, louisville_co_house,
                     boulder_house, denver_house, nyc_house, seattle_house, los_angeles_house ]
-
-anger_management =   Treatment.create!( name: "Anger management", style: :standard )
-brief_intervention = Treatment.create!( name: "Brief intervention approach", style: :standard )
-matrix_model =       Treatment.create!( name: "Matrix model", style: :standard )
-medication_assist =  Treatment.create!( name: "Medication-assisted therapy (MAT)", style: :opoid )
-veterans =           Treatment.create!( name: "Veterans", style: :special_program )
-eating_disorder =    Treatment.create!( name: "Eating disorder", style: :special_program )
-yoga =               Treatment.create!( name: "Yoga", style: :alternative )
-equine_therapy =     Treatment.create!( name: "Equine therapy", style: :alternative )
-
-all_treatment_seeds = [ anger_management, brief_intervention, matrix_model, medication_assist, veterans, eating_disorder,
-                        yoga, equine_therapy ]
-
-linens =     Amenity.create!( name: "Linens" )
-toiletries = Amenity.create!( name: "Toiletries" )
-dishes =     Amenity.create!( name: "Dishes and cookware" )
-wifi =       Amenity.create!( name: "Wi-Fi" )
-pool =       Amenity.create!( name: "Pool" )
-
-all_amenity_seeds = [ linens, toiletries, dishes, wifi, pool ]
-
-jcaho = Accreditation.create!( name: "Joint-Commision (JCAHO)" )
-
-all_accreditation_seeds = [ jcaho ]
-
-aetna =       InsuranceCompany.create!( name: "Aetna" )
-am_fam_ins =  InsuranceCompany.create!( name: "American Family Insurance" )
-amerigroup =  InsuranceCompany.create!( name: "Amerigroup" )
-caresource =  InsuranceCompany.create!( name: "CareSource" )
-horace_mann = InsuranceCompany.create!( name: "Horace Man Educators Corp." )
-
-all_insurance_company_seeds = [ aetna, am_fam_ins, amerigroup, caresource, horace_mann ]
 
 image_seeds = %w( http://www.rosecrance.org/wp-content/uploads/2015/12/Rosecrance_8_28_15_02687-1200x800_c.jpg
                   http://vannessrecoveryhouse.com/wp-content/uploads/2017/02/cropped-vannessrecoveryhouse-back.jpg
@@ -124,10 +102,31 @@ image_seeds = %w( http://www.rosecrance.org/wp-content/uploads/2015/12/Rosecranc
                   https://aff.bstatic.com/images/hotel/840x460/105/105709604.jpg
                   http://jcsrecoveryhouse.com/wp-content/uploads/2013/04/img_slide05-1024x629.jpg )
 
-all_house_seeds.each_with_index do |house, index|
-  house.treatments =          all_treatment_seeds
-  house.amenities =           all_amenity_seeds
-  house.accreditations =      all_accreditation_seeds
-  house.insurance_companies = all_insurance_company_seeds
-  house.images.create( image: image_seeds[index] )
+categories = File.readlines( 'categories.csv' ).map{ |line| line.chomp }
+category_seeds = ["dummuy 0'th entry"] + categories.map{ |category| Category.create!( category: category ) }
+
+filters =   File.readlines( 'filters.csv' ).map{ |line| line.chomp.split( ',' ) }
+filters.each{ |filter| category_seeds[filter[0].to_i].filters.create( filter:filter[1] ) }
+
+house_seeds.each_with_index do |house, index|
+  house.images.create!( image: image_seeds[index] )
+  house.filters = [ Category.find_by( category: 'Age Group' ).filters.first ] +
+                  Category.find_by( category: 'Amenity' ).filters.all +
+                  [ Category.find_by( category: 'Food' ).filters.first ] +
+                  [ Category.find_by( category: 'Gender' ).filters.first ] +
+                  Category.find_by( category: 'Insurance Accepted' ).filters.all +
+                  Category.find_by( category: 'License/Certification/Accreditation' ).filters.all +
+                  [ Category.find_by( category: 'Payment Assistance' ).filters.first ] +
+                  Category.find_by( category: 'Treatment Approach' ).filters.all +
+                  Category.find_by( category: 'Opioid Treatment' ).filters.all +
+                  Category.find_by( category: 'Special Program' ).filters.all +
+                  Category.find_by( category: 'Alternative Therapy' ).filters.all +
+                  [ Category.find_by( category: 'Pet' ).filters.fourth ] +
+                  [ Category.find_by( category: 'Smoking Policy' ).filters.first ] +
+                  [ Category.find_by( category: 'Neighborhood Type' ).filters.first ] +
+                  [ Category.find_by( category: 'Recovery Plan' ).filters.first ] +
+                  [ Category.find_by( category: 'Number Of Diagnoses' ).filters.second ] +
+                  Category.find_by( category: 'House Type' ).filters.all +
+                  Category.find_by( category: 'Room Type' ).filters.all +
+                  [ Category.find_by( category: 'Electronics Policy' ).filters.first ]
 end

@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180731220558) do
+ActiveRecord::Schema.define(version: 20180809190625) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "accreditations", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "accreditations_houses", id: false, force: :cascade do |t|
-    t.bigint "accreditation_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["accreditation_id", "house_id"], name: "index_accreditations_houses_on_accreditation_id_and_house_id"
-  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,18 +28,6 @@ ActiveRecord::Schema.define(version: 20180731220558) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "amenities", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "amenities_houses", id: false, force: :cascade do |t|
-    t.bigint "amenity_id", null: false
-    t.bigint "house_id", null: false
-    t.index ["amenity_id", "house_id"], name: "index_amenities_houses_on_amenity_id_and_house_id"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -149,12 +126,6 @@ ActiveRecord::Schema.define(version: 20180731220558) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "insurance_companies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "places", force: :cascade do |t|
     t.string "title"
     t.text "address"
@@ -216,23 +187,9 @@ ActiveRecord::Schema.define(version: 20180731220558) do
     t.string "uuid"
   end
 
-  create_table "states", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "full_name"
-    t.string "abbreviation"
-  end
-
   create_table "topics", force: :cascade do |t|
     t.string "name"
     t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "treatments", force: :cascade do |t|
-    t.string "name"
-    t.integer "style"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

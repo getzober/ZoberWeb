@@ -14,13 +14,14 @@ FactoryBot.define do
     capacity 100
     price 5000.00
     deposit 5000.00
-    property_description "A cool place for cool people."
-    neighborhood "The best one"
+    property_description "A cool place for cool people"
+    neighborhood "Urban"
     curfew "10 PM"
     overnight_passes "Twice per month"
     latitude 37.7079
     longitude -122.4553
     street2 "Suite 1"
     phone "1234567890"
+    bio "Founded in 1902, the House of Soberness has stayed true to its mission statement of caring for all those in need ever since."
   end
 end

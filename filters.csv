@@ -1,74 +1,140 @@
-"category_id","filter"
-1,"Adult (18+)"
-1,"Youth"
-1,"Senior(65+)"
-2,"Pool"
-2,"Hot Tub"
-2,"Fireplace"
-2,"Television"
-2,"Streaming Services"
-2,"Internet (wi-fi)"
-2,"Parking"
-2,"Dishes & Cookware"
-2,"Linens"
-2,"Essentials"
-2,"Street Parking"
-2,"Laundry Onsite"
-2,"Ironing Board"
-2,"Heat"
-2,"Air Conditioning"
-2,"Coffee Provided"
-2,"Cable"
-2,"Game Console"
-2,"Pool Table"
-2,"Ping Pong Table"
-3,"12-Step"
-3,"Holistic"
-3,"Faith"
-3,"Fitness"
-3,"Wilderness"
-4,"Food Served Onsite"
-4,"Food Cart Provided"
-4,"No Food Provided"
-5,"Coed"
-5,"Male"
-5,"Female"
-6,"Anthem"
-7,"Commission on Accreditation of Rehabilitation Facilities (CARF)"
-7,"Joint Commission (JCAHO)"
-7,"National Alliance for Recovery Residences (NARR)"
-8,"Credit Cards"
-8,"Cash"
-8,"Check"
-9,"Self Pay"
-9,"Commercial Insurance"
-9,"Medicaid"
-9,"Medicare"
-10,"Cats"
-10,"Dogs"
-10,"No Pets Allowed"
-11,"Smoking Allowed in Designated Areas"
-11,"Vaping Allowed in Designated Areas"
-11,"No Smoking/Vaping On Site"
-12,"Residential"
-12,"Partial Hospitalization (PHP)"
-12,"Intensive Outpatient (IOP)"
-12,"Sober Living (SLE)"
-13,"Cognitive Behavioral Therapy (CBT)"
-13,"Dialectical Behavioral Therapy (DBT)"
-13,"Equine Therapy"
-13,"Family Program"
-13,"Motivational Interviewing"
-13,"Art Therapy"
-13,"Music Therapy"
-13,"Trauma Informed Therapy"
-13,"Process Groups"
-13,"1:1 Counseling"
-13,"Sober Activities"
-14,"Alcohol"
-14,"Drugs"
-14,"Food"
-14,"Mental Health"
-14,"Gambling"
-14,"Sex"
-14,"Internet"
+1,Adult (18+)
+1,Youth
+1,Senior(65+)
+2,Pool
+2,Hot Tub
+2,Fireplace
+2,Television
+2,Streaming Services
+2,Internet (Wi-Fi)
+2,Internet (Ethernet)
+2,Parking
+2,Dishes & Cookware
+2,Linens
+2,Essentials
+2,Street Parking
+2,Laundry Onsite
+2,Ironing Board
+2,Heat
+2,Air Conditioning
+2,Coffee Provided
+2,Cable
+2,Game Console
+2,Pool Table
+2,Ping Pong Table
+2,Toiletries
+2,Board Games
+2,Gym On-Site
+2,Tennis Court
+2,Horseback Riding
+2,Piano
+2,Guitar
+2,Other Instruments
+2,Beach Access
+2,Surfboards Available
+2,Bicycles Available
+3,12-Step
+3,Holistic
+3,Faith
+3,Fitness
+3,Wilderness
+4,Food Served Onsite
+4,Food Cart Provided
+4,No Food Provided
+5,Co-ed
+5,Male
+5,Female
+6,Aetna
+6,Anthem
+6,American Family Insurance
+6,American National Insurance
+6,Amerigroup
+6,Anthem Blue Cross/Blue Shield
+6,Blue Cross & Blue Shield Association
+6,CareSource
+6,Cambia Health Solutions
+6,Health Net
+6,HealthMarkets
+6,HealthPartners
+6,Health Spring
+6,High Mark
+6,Horace Mann Educators Corp.
+6,Havana
+6,Independence Blue Cross
+7,Commission On Accreditation Of Rehabilitation Facilities (CARF)
+7,Joint Commission (JCAHO)
+7,National Alliance For Recovery Residences (NARR)
+8,Credit Cards
+8,Cash
+8,Check
+9,Self Pay
+9,Commercial Insurance
+9,Medicaid
+9,Medicare
+10,Cats
+10,Dogs
+10,No Pets
+10,Therapy Animals
+11,Smoking Allowed In Designated Areas
+11,Vaping Allowed In Designated Areas
+11,No Smoking/Vaping On Site
+12,Residential
+12,Partial Hospitalization (PHP)
+12,Intensive Outpatient (IOP)
+12,Sober Living (SLE)
+13,Cognitive Behavioral Therapy (CBT)
+13,Dialectical Behavioral Therapy (DBT)
+13,Equine Therapy
+13,Family Program
+13,Motivational Interviewing
+13,Art Therapy
+13,Music Therapy
+13,Trauma Informed Therapy
+13,Process Groups
+13,1:1 Counseling
+13,Sober Activities
+14,Alcohol
+14,Drugs
+14,Food
+14,Mental Health
+14,Gambling
+14,Sex
+14,Internet
+15,Urban Neighborhood
+15,Rural Neighborhood
+16,Traditional | 12-Step
+16,Traditional | 24-Step
+16,Traditional | 6-Step
+17,Single Diagnosis
+17,Double Diagnosis
+17,Triple Diagnosis
+18,Private
+18,Semi-Private
+18,Public
+19,Anger Management
+19,Brief Intervention Approach
+19,Cognitive Behavioral Therapy (CBT)
+19,Contingency Managagement
+19,Community Reinforcement Plus
+19,Dialectical Behavioral Therapy (DBT)
+19,Faith-Based Approach
+19,Harm Reduction
+19,Motivational Interviewing
+19,Matrix Model
+19,Practical Recovery
+19,REBT/SMART Recovery
+19,Rational Recovery
+19,Refuge Recovery
+19,Relapse Prevention
+19,Substance Abuse Counseling
+19,Twelve Step Facilitation Approach
+19,Trauma/PTSD Counseling
+20,No Payment Assistance
+20,Sponsorship Available
+21,SAMSHA-Certified
+21,Medication-Assisted Therapy (MAT)
+21,No MAT Clients
+22,Detox
+22,Residential
+23,Electronics Allowed
+23,No Electronics Allowed
