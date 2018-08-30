@@ -1,27 +1,27 @@
 Rails.application.routes.draw do
 
-  devise_for :controllers
-  devise_for :admin, path: 'admin', controllers: {sessions: "admin/sessions", registrations: 'admin/registraions'}
+  #devise_for :controllers
+  #devise_for :admin, path: 'admin', controllers: {sessions: "admin/sessions", registrations: 'admin/registraions'}
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: "users/registrations"}
   get 'sitemap/index'
 
   get 'index' => 'dashboard#index'
 
-  devise_for :providers
-  devise_scope :provider do
-    get '/providers/:id' => 'providers#show'
-  end
+  #devise_for :providers
+  #devise_scope :provider do
+  #  get '/providers/:id' => 'providers#show'
+  #end
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :purchases, only: [:show]
   resources :products, only: [:index, :show]
 
   resources :topics, only: [:show]
-  resources :charges
+  #resources :charges
 
-  resource :home_page, only: [:show]
+  #resource :home_page, only: [:show]
   resources :houses, :users, :only => [:new, :create, :index, :show]
-  resources :places, except: [:update, :edit, :destroy]
+  #resources :places, except: [:update, :edit, :destroy]
   resources :blogs do
     resources :comments
   end
