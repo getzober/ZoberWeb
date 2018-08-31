@@ -1,13 +1,10 @@
-<header class="navbar navbar-expand-lg navbar-light fixed-top" id="secondNav">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container-fluid">
 
   <div id="main-icon">
     <a href="/houses">
       <%=image_tag("tinylogo.png", alt: "tinylogo", class: "tinylogo img-fluid ")%>
     </a>
-  </div>
-
-  <div id="searchbar">
-    <input id="search-value" type="text" placeholder="Enter city, state, or zip to find treatment or sober living">
   </div>
 
   <div id="header-items">
@@ -28,8 +25,5 @@
       <%= link_to "register", new_user_registration_path, class: "header-item link_items" %>
 
     <% end %>
-
   </div>
-</header>
-
-<script src="https://www.google.com/maps/api/js?key=<%= ENV['google_map_api_key'] %>&libraries=places"> </script>
+</nav>

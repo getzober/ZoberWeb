@@ -2,8 +2,7 @@ class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles
 
-  devise 
-    :database_authenticatable, 
+  devise :database_authenticatable, 
     :registerable, 
     :recoverable, 
     :rememberable, 
