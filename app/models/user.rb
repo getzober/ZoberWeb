@@ -7,7 +7,11 @@ class User < ApplicationRecord
     :recoverable, 
     :rememberable, 
     :trackable,
-    :validatable
+    :validatable,
+    :omniauthable, 
+    omniauth_providers: [
+      :facebook
+    ]
   
   after_create :send_admin_mail
 

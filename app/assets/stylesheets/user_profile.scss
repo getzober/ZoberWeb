@@ -1,6 +1,18 @@
 body {
   float: right;
 }
+.user_email {
+  text-align: center;
+  width: 100%;
+  color:#626262; 
+  font-family: raleway;
+}
+label.email {
+  text-align: center;
+}
+label.password {
+  text-align: center;
+}
 .user-l {
   padding-right: 6px;
 }
@@ -35,6 +47,5 @@ h4.card-header {font-family:raleway; font-size:4rem; font-weight:300; color:#f47
 .card-title.user {color:#626262; font-family: raleway;}
 .card-text.user{color:#626262; font-family: raleway;}
 .small-user{color:#626262; font-family: raleway;}
-.user_email{color:#626262; font-family: raleway;}
 h1.display-4{background-color:#ffffff; color:#f47f49; font-family:raleway;}
 a.btn.btn-raised{background-color:#626262; color:#ffffff;}

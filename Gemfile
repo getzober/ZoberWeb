@@ -11,6 +11,7 @@ gem 'figaro'
 gem 'bcrypt-ruby', '3.1.2'
 
 gem "omniauth-google-oauth2", "~> 0.2.1"
+gem "omniauth-facebook"
 
 gem 'geocoder', '~> 1.4'
 gem "scrollreveal-rails"
